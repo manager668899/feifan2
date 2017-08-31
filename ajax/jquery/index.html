@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery ajax</title>
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+</head>
+<body>
+	<form action="" method="post">
+		 <input type="text" name="name">姓名<br/>
+		 <input type="text" name="age">年龄<br/>
+		 <input type="text" name="class">班级<br/>
+		 <input type="text" name="sex">性别<br/>
+		 <input type="text" name="hobby">爱好<br/>
+		 <input type="button" value="提交" id='go'>
+	</form>
+	<script type="text/javascript">
+		    $(function(){
+                 $('#go').click(function(){
+                 	  $.ajax({
+                 	  	 type:'post',
+                 	  	 url:'demo1.php',
+                 	  	 data:{
+                                name:'zhansan',
+                                age:18,
+                                class:'php',
+                                sex:'女',
+                                hobby:'买衣服,逛街'
+                 	  	     },
+                         success:function(data){
+                                 alert(data);
+                           }
+
+
+                 	  });
+                 });
+		    })
+
+	</script>
+</body>
+</html>
