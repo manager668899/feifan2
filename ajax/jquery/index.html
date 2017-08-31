@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="" method="post" id='form'>
 		 <input type="text" name="name">姓名<br/>
 		 <input type="text" name="age">年龄<br/>
 		 <input type="text" name="class">班级<br/>
@@ -20,16 +20,21 @@
                  	  $.ajax({
                  	  	 type:'post',
                  	  	 url:'demo1.php',
-                 	  	 data:{
-                                name:'zhansan',
-                                age:18,
-                                class:'php',
-                                sex:'女',
-                                hobby:'买衣服,逛街'
-                 	  	     },
+                 	  	 timeout:5000,
+                 	  	 dataType:'json',
+                 	  	 data:$('#form').serialize(),
                          success:function(data){
-                                 alert(data);
-                           }
+                                 alert(data.name+data.age+data.class+data.sex+data.hobby);
+                           },
+                         error:function(data){
+                               alert('请求失败');
+                              //console.log(data);;
+                          },
+                         beforeSend:function()
+	                         {
+	                         	 alert('姓名不能为空');
+	                         	 return false;
+	                         }
 
 
                  	  });
