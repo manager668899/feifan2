@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="static/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<form id='form'>
+		 <input type="text" name="name">姓名<br/>
+		 <input type="text" name="age">年龄<br/>
+		 <input type="text" name="class">班级<br/>
+		 <input type="text" name="hobby">爱好<br/>
+		 <input type="text" name="sex">性别<br/>
+		 <input type="button" value="注册" id="button">
+	</form>
+
+
+	<script type="text/javascript">
+		   $(function(){
+               $('#button').click(function(){
+               	    $.ajax({
+               	    	type:"post",
+               	    	url:"DB/demo.php",
+               	    	data:$("#form").serialize(),
+               	    	success:function(data){
+                            alert(data);
+               	    	}
+               	    });
+               });
+		   });
+	</script>
+{md5('123456')}
+
+{include file='head.html'}
+
+</body>
+</html>
