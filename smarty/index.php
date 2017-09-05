@@ -29,7 +29,13 @@ $smarty->assign('obj',$obj);
 
 
 $smarty->assign('content','商品');
-$smarty->display('index.tpl');
+//$smarty->display('index.tpl');
+$smarty->display('file.tpl');
+/*
+ 静态 继承 访问修饰符的权限 
+ 文件上传
 
+
+*/
 
 
