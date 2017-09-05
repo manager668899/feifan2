@@ -18,7 +18,7 @@ for ($i=0; $i <$arrInt ; $i++) {
 
 }
 
-
+var_dump($bool);
 
 //$name[]=$_FILES['idcard']['name'][1];
 //var_dump($name);
