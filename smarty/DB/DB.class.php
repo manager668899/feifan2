@@ -39,6 +39,11 @@ class DB
            return $this;
 
    }
+   public function query($sql='')
+   { 
+        return mysqli_query($this->link,$sql);
+       
+   }
 
 
    public function ggg()
@@ -55,7 +60,7 @@ class DB
 
 }
 
-DB::getDB()->select()->ggg()->kkk();
+//DB::getDB()->select()->ggg()->kkk();
 /*
  smarty 模板的配置 渲染输出 模板中的函数 包含 继承 流程控制 
  面向对象的单列模式  

@@ -1,25 +1,19 @@
-{extends file='head.html'}
-{block name='text'}
-   <p>kkkkkkkkkkkk</p>
-{/block}
-
-
+{extends file='base/base.tpl'}
 {block name='content'}
-    {$content}
-    <hr/>
-
-  
-    {foreach $arr as $v}
-       {$v}
-    {/foreach} 
-
-
-    {if $arr['aa']=='AAAAA'}
-        <span>AAAA</span>
-        {else}
-        <span>BBBB</span>
-    {/if}
-  
-
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
 {/block}
+
+
+
     

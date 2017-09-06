@@ -17,36 +17,44 @@ body {
 	<h1>图片上传插件</h1>
 	<form>
 		<div id="queue"></div>
-		<input id="file_upload" name="idcard" type="file" multiple="true">
+
+		<input type="file" name="file_upload" id="file_upload" />
 	</form>
 	<div id="img">
 			<img src="">
 	</div>
 
+
 	<script type="text/javascript">
 		<?php $timestamp = time();?>
 			$(function() {
 			    $("#file_upload").uploadify({
-			        //'swf'             : 'uploadify.swf',
+			        'swf'             : 'uploadify.swf',
 			        'uploader'        : '../../DB/demo1.php',
 			        'buttonText' : '图片上传',
 			        'onUploadSuccess' : function(file, data, response) {
-			            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+			            alert('The file ' + file.name + '数据' + response + ':' + data);
 			             //alert(file.name);
                          //$('#img').html("file.data");
                          // console.log(data);
                          //console.log(file);
                          //console.log(response);
-                          var obj=JSON.parse(data);
+                         // var obj=JSON.parse(data);
 
                          //$('#img').html("<img src='../../uploade/1504629985.png'>");
                           //alert("../"+obj.img);
 
-                         $('#img').attr("src","../"+obj.img);
+                         //$('#img').attr("src","../"+obj.img);
                          //$('#img').show();
 			        }
 			    });
 			});
 	</script>
+
+	<form action="../../DB/demo1.php" method="post" enctype="multipart/form-data">
+		<input type="file" name="Filedata" multiple="multiple">
+		<input type="submit" value="普通上传" >
+	</form>
+
 </body>
 </html>
