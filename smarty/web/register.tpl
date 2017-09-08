@@ -41,8 +41,8 @@
               	   	   	    	alert('用户名不能为空');
               	   	   	    	return false;
               	   	   	    }
-              	   	   	    if(pwd1!=pwd2 || pwd1==''){
-                                alert('两次密码不一致,或者密码为空');
+              	   	   	    if(pwd1!=pwd2 || pwd1==''|| pwd1.length<6){
+                                alert('两次密码不一致,或者密码为空,长度必须是6位以上');
                                 return false;
               	   	   	    }
               	   	   }

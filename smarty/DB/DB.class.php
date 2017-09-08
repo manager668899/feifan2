@@ -26,6 +26,13 @@ class DB
          }
        
 	 } 
+   public function login($sql='')
+   {
+       $resa=mysqli_query($this->link,$sql);
+       $arr=mysqli_fetch_assoc($resa);
+       return $arr;
+
+   }
 
    public function select()
    {

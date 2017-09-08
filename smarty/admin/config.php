@@ -4,5 +4,6 @@ require_once('../DB/DB.class.php');
 session_start(); 
 $smarty =new Smarty();
 
-$smarty->template_dir='../web'; //设置模板目录为  上一级的web文件夹
-$smarty->assign('url','../');
+$smarty->template_dir='web'; //设置模板目录为  上一级的web文件夹
+
+

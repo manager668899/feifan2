@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-06 17:55:55
+/* Smarty version 3.1.30, created on 2017-09-08 08:57:58
   from "D:\phpStudy\WWW\feifan2\smarty\web\register.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59afc62bbd8502_75625907',
+  'unifunc' => 'content_59b1eb168af115_90509380',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f54c45b6ce61d00bd6222c4612cf044bebbb7313' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\register.tpl',
-      1 => 1504685718,
+      1 => 1504832272,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59afc62bbd8502_75625907 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b1eb168af115_90509380 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3002559afc62bbcc983_39667281', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1437659b1eb168a7411_91901087', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2762259afc62bbd4687_98461304', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2134759b1eb168ab291_72124573', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_3002559afc62bbcc983_39667281 extends Smarty_Internal_Block
+class Block_1437659b1eb168a7411_91901087 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -66,7 +66,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_2762259afc62bbd4687_98461304 extends Smarty_Internal_Block
+class Block_2134759b1eb168ab291_72124573 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -91,8 +91,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
               	   	   	    	alert('用户名不能为空');
               	   	   	    	return false;
               	   	   	    }
-              	   	   	    if(pwd1!=pwd2 || pwd1==''){
-                                alert('两次密码不一致,或者密码为空');
+              	   	   	    if(pwd1!=pwd2 || pwd1==''|| pwd1.length<6){
+                                alert('两次密码不一致,或者密码为空,长度必须是6位以上');
                                 return false;
               	   	   	    }
               	   	   }

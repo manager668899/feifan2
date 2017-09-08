@@ -21,10 +21,12 @@
 <div class="container-fluid">
        <ul class="nav nav-tabs">
           <li role="presentation" class="active"><a href="{$url}index.php">首页</a></li>
-          <li role="presentation"><a href="{$url}home/login.php">登录</a></li>
-          <li role="presentation"><a href="{$url}home/register.php">注册</a></li>
+
           <li role="presentation"><a href="#">购物车</a></li>
           <li role="presentation"><a href="#">个人中心</a></li>
+          <li role="presentation"><a href="#">{if isset($smarty.session.user)}  {$smarty.session.user}<li role="presentation"><a href="{$url}home/unset.php">安全退出</a></li>
+          {else}  <li role="presentation"><a href="{$url}home/login.php">登录</a></li>
+          <li role="presentation"><a href="{$url}home/register.php">注册</a></li>{/if} </a></li>
       </ul>
 
    <div class="row">
