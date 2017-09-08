@@ -40,7 +40,7 @@ class My{
     }
 
 }
-
+/*------------------------------------------*/
 class My2 extends My{
 
 	 public static $jjj='jjjjjjjjj';
@@ -84,9 +84,18 @@ class My2 extends My{
 
 
 }
+/*_________________________*/
+class My3 extends My2
+{
+    public function __construct()
+    {
+       echo 'My3类';
+       parent::__construct();
+    }
+}
 
-
-
+$obj=new My3();
+$obj->aa();
 //$obj=new My2();
 //echo $obj->ss; 
 
@@ -104,20 +113,20 @@ class My2 extends My{
 //echo My2::$jjj;
 // static 静态 和动态的区别 静态的值是存储在内存中程序结束不会立刻消失。
 
-My2::gg3();
-My::gg3();
+// My2::gg3();
+// My::gg3();
 
 
-function kkk()
-{
-  static $a=1;
-	$a++;
-	echo $a;
-}
+// function kkk()
+// {
+//   static $a=1;
+// 	$a++;
+// 	echo $a;
+// }
 
 
-echo '<hr/>';
-kkk();
-kkk();
-kkk();
-kkk();
+// echo '<hr/>';
+// kkk();
+// kkk();
+// kkk();
+// kkk();

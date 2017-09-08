@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div>
+		 <li><input type="text" name="name"></li>
+		 <li><input type="text" name="age"></li>
+		 <li><input type="text" name="class"></li>
+		 <li id='jj'>提交</li>
+	</div>
+   <script type="text/javascript">
+         $(function(){
+         	  $("#jj").click(function(){
+         	  	   $.ajax({
+         	  	   	   type:'POST',
+         	  	   	   url:'demo1.php',
+         	  	   	   data:{
+         	  	   	   	   name: $('input').eq(0).val(),
+         	  	   	   	   age:$('input').eq(1).val(),
+         	  	   	   	   class:$('input').eq(2).val(),
+         	  	   	   },
+         	  	   	   success:function(data){
+                           alert();
+         	  	   	   }
+         	  	   });
+         	  });
+         })
+   </script>
+</body>
+</html>
