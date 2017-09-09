@@ -33,6 +33,9 @@ class DB
        return $arr;
 
    }
+   public function getinsertId(){
+      return mysqli_insert_id($this->link);
+   }
 
 
    public function SelectGo($sql='')

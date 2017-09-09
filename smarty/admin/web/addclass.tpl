@@ -16,7 +16,7 @@
 				  <td class="success" style="width: 120px">
 				  	 <input type="text"  class="form-control" name="title" style="width: 150px">  
 				  </td>
-				  <td class="warning " style="width: 120px" id='addclass' >添加子级分类</td>
+				  <td class="warning " style="width: 120px" id='addclass' >点击我添加分类</td>
 			 </tr> 
 			 <span id='success'></span>
       </table>
@@ -47,9 +47,15 @@
                                 $('#success').html(data.msg);
                                  //add='';
                                  var add=data.asss;
-                                $('select').append("<option>"+add+"</option>");
+                                 var inid=data.inserID;
+                                $('select').append("<option value="+inid+">"+add+"</option>");
                                                        
-                	   	    }
+                	   	    },
+                          beforeSend:function(){
+                              if(name==''){
+                                  return false;
+                              }
+                          }
                 	   });
                 });
            });
