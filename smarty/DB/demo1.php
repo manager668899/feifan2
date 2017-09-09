@@ -16,3 +16,4 @@ $bool=move_uploaded_file($namefile,$dir);
 
 $array=['img'=>$dir];
 echo json_encode($array);
+//var_dump($_FILES);

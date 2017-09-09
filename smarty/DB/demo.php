@@ -1,15 +1,15 @@
 <?php
-var_dump($_POST);
-echo '<hr/>';
-var_dump($_FILES);
+//var_dump($_POST);
+//echo '<hr/>';
+//var_dump($_FILES);
 
-
- $arrInt=count($_FILES['idcard']['name']);
+//die;
+ $arrInt=count($_FILES['Filedata']['name']);
 
 for ($i=0; $i <$arrInt ; $i++) { 
 
-	$name=$_FILES['idcard']['name'][$i];
-	$namefile=$_FILES['idcard']['tmp_name'][$i];
+	$name=$_FILES['Filedata']['name'][$i];
+	$namefile=$_FILES['Filedata']['tmp_name'][$i];
     $arr=explode('.', $name);
     $dir="../uploade/".time().mt_rand(1,100000).'.'.$arr[1];
     //echo $dir;

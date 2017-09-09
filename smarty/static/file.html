@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文件的上传插件</title>
+	<link rel="stylesheet" type="text/css" href="uploadify/uploadify.css">
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="uploadify/jquery.uploadify.js"></script>
+</head>
+<body>
+	<input type="file" id='file' name="idcard[]">
+  <script type="text/javascript">
+		  $(function(){
+		  	 $('#file').uploadify({
+		  	 	   swf:"uploadify/uploadify.swf",
+		  	 	   uploader:"../DB/demo1.php",
+		  	 	   width:130,
+		  	 	   height:40,
+		  	 	   fileTypeDesc:'fileTypeDesc',
+		  	 	   fileTypeExts:'*.gif; *.jpg; *.png',
+		  	 	   fileSizeLimit:'20480KB',
+		  	 	   fileObjName : 'Filedata', //fileObjName
+		  	 	   queueSizeLimit:50000,
+		  	 	   uploadLimit : 5,
+		  	 	   buttonText:'点击上传',
+		  	 	   preventCaching:false,
+		  	 	   //auto:false,
+		  	 	   onDestroy:function(){
+
+		  	 	   },
+		  	 	   onUploadSuccess:function(file ,data,response){
+                         //alert(data);
+                         var imgs= JSON.parse(data);
+                         $('#img').attr('src',imgs.img).attr('width','200px').attr('height','200px');
+		  	 	   }
+		  	 });
+		  })
+  	    
+  </script>
+  <div style="width: 20px; height: 20px" ><img src="" id='img'></div>
+</body>
+</html>
