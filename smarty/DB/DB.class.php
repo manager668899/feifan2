@@ -34,6 +34,20 @@ class DB
 
    }
 
+
+   public function SelectGo($sql='')
+   {
+           
+           $resa=mysqli_query($this->link,$sql);
+           $array=[];
+           while ( $arr=mysqli_fetch_assoc($resa)) {
+                     $array[]=$arr;
+           }
+  
+           return $array;
+
+   }
+
    public function select()
    {
            $sql="select * from study1";

@@ -19,3 +19,10 @@ CREATE TABLE tg_goods(
 	PRIMARY KEY (id),
 	index (name)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+CREATE TABLE tg_class( 
+	id smallint(4) unsigned not null AUTO_INCREMENT COMMENT '分类表',
+	title varchar(30) not null  DEFAULT '' COMMENT '分类名称',
+	pid smallint(4) unsigned not null  COMMENT 'tg_classID',
+	PRIMARY KEY (id)
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;

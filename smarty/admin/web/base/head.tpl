@@ -36,7 +36,7 @@
 					  <li>商品管理</li>
 					  <li><a href="goodslist.php">...商品列表</a></li>
 					  <li><a href="addgoods.php">...商品添加</a></li>
-					  <li>...系统管理</li>
+					  <li><a href="addclass.php">...商品分类</a></li>
 					  <li>系统管理</li>
 					  <li>...系统管理</li>
 					  <li>...系统管理</li>
