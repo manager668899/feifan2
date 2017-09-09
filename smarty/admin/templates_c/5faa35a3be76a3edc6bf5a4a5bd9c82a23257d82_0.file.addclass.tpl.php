@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-09 16:54:29
+/* Smarty version 3.1.30, created on 2017-09-09 17:42:04
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addclass.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b3ac45126ef5_70799086',
+  'unifunc' => 'content_59b3b76c2398c1_42923880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5faa35a3be76a3edc6bf5a4a5bd9c82a23257d82' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addclass.tpl',
-      1 => 1504947264,
+      1 => 1504950120,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b3ac45126ef5_70799086 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b3b76c2398c1_42923880 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1900359b3ac45123074_58076596', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2477659b3b76c235a43_09156403', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_832359b3ac45126ef6_55381431', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_442659b3b76c2398c6_69208068', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1900359b3ac45123074_58076596 extends Smarty_Internal_Block
+class Block_2477659b3b76c235a43_09156403 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -68,7 +68,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 				  <td class="success" style="width: 120px">
 				  	 <input type="text"  class="form-control" name="title" style="width: 150px">  
 				  </td>
-				  <td class="warning" style="width: 120px" id='addclass' >添加子级分类</td>
+				  <td class="warning " style="width: 120px" id='addclass' >添加子级分类</td>
 			 </tr> 
 			 <span id='success'></span>
       </table>
@@ -77,7 +77,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_832359b3ac45126ef6_55381431 extends Smarty_Internal_Block
+class Block_442659b3b76c2398c6_69208068 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
