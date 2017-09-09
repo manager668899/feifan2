@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-08 17:21:13
+/* Smarty version 3.1.30, created on 2017-09-09 11:34:44
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addgoods.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b261095aab50_66215923',
+  'unifunc' => 'content_59b36154135501_36852361',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99302110306788138034c49bca95c49531d8adb4' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addgoods.tpl',
-      1 => 1504862470,
+      1 => 1504928080,
       2 => 'file',
     ),
   ),
@@ -21,41 +21,79 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b261095aab50_66215923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b36154135501_36852361 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1308959b261095aab54_67860283', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3012159b3615412d800_47612518', 'head');
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3104459b36154131682_58970498', 'content');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2728059b36154135508_55262801', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
-/* {block 'content'} */
-class Block_1308959b261095aab54_67860283 extends Smarty_Internal_Block
+/* {block 'head'} */
+class Block_3012159b3615412d800_47612518 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-      <form action="DB/demo.php" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
+<?php echo '<script'; ?>
+ type="text/javascript" src="../static/bootstrap/js/jquery.validate.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="../static/bootstrap/js/jsAddress.js"><?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block 'head'} */
+/* {block 'content'} */
+class Block_3104459b36154131682_58970498 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+
+  <form id='form' action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
+        <h3>商品的添加</h3>
         <span>商品名称</span>
-        <input type="text" class="form-control"  name="name" style="width:50%" >
+        <input type="text" class="form-control required"  name="user" style="width:50%" >
         <span>商品封面图</span>
         <input type="file" name="idcard[]">
          <span>商品封面图</span>
         <input type="file" name="idcard[]">
         <span>商品的价格</span>
-        <input type="text" class="form-control" name="price" style="width:20%">
+        <input type="text" class="form-control required" name="price" style="width:20%">
         <span>商品的库存数量</span>
-        <input type="text" class="form-control" name="mun" style="width:20%">
+        <input type="text" class="form-control required" name="mun" style="width:20%">
         <span>商品的产地</span>
-        <input type="text" class="form-control" name="address" style="width:50%" >
-	<?php echo '<script'; ?>
- id="container" name="content" type="text/plain" style="height: 800px;">
-           
-    <?php echo '</script'; ?>
->
+        
 
+        <div>
+          省：<select id="cmbProvince" name="address[]" ></select>
+          市：<select id="cmbCity" name="address[]" ></select>
+          区：<select id="cmbArea" name="address[]" ></select>
+          <?php echo '<script'; ?>
+ type="text/javascript">
+            addressInit('cmbProvince', 'cmbCity', 'cmbArea', '陕西', '西安市', '雁塔区');
+            addressInit('Select1', 'Select2', 'Select3');
+          <?php echo '</script'; ?>
+>
+          <input type="text" class="form-control" placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" >
+        </div>
+	      <?php echo '<script'; ?>
+ id="container" name="content" type="text/plain" style="height: 800px;">
+        <?php echo '</script'; ?>
+>
     <input type="submit" value='提交'>
   </form>
     <!-- 配置文件 -->
@@ -80,4 +118,54 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'content'} */
+/* {block 'js'} */
+class Block_2728059b36154135508_55262801 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+ <?php echo '<script'; ?>
+ type="text/javascript">
+        $(function(){
+             $("#form").validate({
+                  rules:{
+                    user:{
+                       required:true,
+                       rangelength:[2,50]
+                    },
+                    price:{
+                       required:true,
+                       number:true
+                    },
+                    mun:{
+                       required:true,
+                       digits:true
+                    }
+                  },
+                  messages:{
+                        user:{
+                          required:'商品的名称不能为空', 
+                          rangelength:'商品的长度必须是2-50个字符直接'
+                        },
+                        price:{
+                          required:'必须要填写',
+                          number:'商品的价格格式不正确'
+                        },
+                        mun:{
+                          required:'必须要填写数量',
+                          digits:'商品的数量必须是整数'
+                        }
+                  }
+
+             });
+        })
+        
+    <?php echo '</script'; ?>
+>
+   
+ 
+<?php
+}
+}
+/* {/block 'js'} */
 }

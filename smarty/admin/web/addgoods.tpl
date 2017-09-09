@@ -1,22 +1,37 @@
 {extends file='base/base.tpl'}
+{block name='head'}
+<script type="text/javascript" src="../static/bootstrap/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../static/bootstrap/js/jsAddress.js"></script>
+{/block}
 {block name='content'}
-      <form action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
+
+  <form id='form' action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
+        <h3>商品的添加</h3>
         <span>商品名称</span>
-        <input type="text" class="form-control"  name="name" style="width:50%" >
+        <input type="text" class="form-control required"  name="user" style="width:50%" >
         <span>商品封面图</span>
         <input type="file" name="idcard[]">
          <span>商品封面图</span>
         <input type="file" name="idcard[]">
         <span>商品的价格</span>
-        <input type="text" class="form-control" name="price" style="width:20%">
+        <input type="text" class="form-control required" name="price" style="width:20%">
         <span>商品的库存数量</span>
-        <input type="text" class="form-control" name="mun" style="width:20%">
+        <input type="text" class="form-control required" name="mun" style="width:20%">
         <span>商品的产地</span>
-        <input type="text" class="form-control" name="address" style="width:50%" >
-	<script id="container" name="content" type="text/plain" style="height: 800px;">
-           
-    </script>
+        
 
+        <div>
+          省：<select id="cmbProvince" name="address[]" ></select>
+          市：<select id="cmbCity" name="address[]" ></select>
+          区：<select id="cmbArea" name="address[]" ></select>
+          <script type="text/javascript">
+            addressInit('cmbProvince', 'cmbCity', 'cmbArea', '陕西', '西安市', '雁塔区');
+            addressInit('Select1', 'Select2', 'Select3');
+          </script>
+          <input type="text" class="form-control" placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" >
+        </div>
+	      <script id="container" name="content" type="text/plain" style="height: 800px;">
+        </script>
     <input type="submit" value='提交'>
   </form>
     <!-- 配置文件 -->
@@ -31,4 +46,45 @@
         	autoHeight: false
         });
     </script>
+{/block}
+
+{block name='js'}
+ <script type="text/javascript">
+        $(function(){
+             $("#form").validate({
+                  rules:{
+                    user:{
+                       required:true,
+                       rangelength:[2,50]
+                    },
+                    price:{
+                       required:true,
+                       number:true
+                    },
+                    mun:{
+                       required:true,
+                       digits:true
+                    }
+                  },
+                  messages:{
+                        user:{
+                          required:'商品的名称不能为空', 
+                          rangelength:'商品的长度必须是2-50个字符直接'
+                        },
+                        price:{
+                          required:'必须要填写',
+                          number:'商品的价格格式不正确'
+                        },
+                        mun:{
+                          required:'必须要填写数量',
+                          digits:'商品的数量必须是整数'
+                        }
+                  }
+
+             });
+        })
+        
+    </script>
+   
+ 
 {/block}
