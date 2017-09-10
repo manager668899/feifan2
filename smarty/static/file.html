@@ -32,11 +32,13 @@
                          //alert(data);
                          var imgs= JSON.parse(data);
                          $('#img').attr('src',imgs.img).attr('width','200px').attr('height','200px');
+                         $('#imgs').append("<div><img src="+imgs.img+" width='20%'></div>");
 		  	 	   }
 		  	 });
 		  })
   	    
   </script>
   <div style="width: 20px; height: 20px" ><img src="" id='img'></div>
+  <span id='imgs'></span> 
 </body>
 </html>
