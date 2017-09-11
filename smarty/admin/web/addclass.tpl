@@ -9,7 +9,7 @@
 		  	        	  <select class="form-control" style="width: 120px">
 		  	        	   <option value="0">主分类</option>
 				      	   {foreach $arr as $v}
-							  <option    value="{$v['id']}">{$v['title']}</option>
+							  <option    value="{$v['id']}">{str_repeat('->',$v['num'])}{$v['title']}</option>
 						   {/foreach}
 						  </select>
 				  </td>
@@ -24,11 +24,11 @@
 {block name ='js'}
  <script type="text/javascript">
            $(function(){
-                id=0;
+               var id=0;
                 $("select").change(function(){
                 	id=$(this).val();
                 });
-                name ='';
+               var  name ='';
                  $("input").change(function(){
                 	name=$(this).val();
                 });
@@ -43,12 +43,17 @@
                 	   	    	names:name
                 	   	    },
                 	   	    success:function(data){
-                                //alert(data.msg);
-                                $('#success').html(data.msg);
-                                 //add='';
-                                 var add=data.asss;
-                                 var inid=data.inserID;
-                                $('select').append("<option value="+inid+">"+add+"</option>");
+                                var host=  window.location.hostname;
+                                var filename=window.location.pathname;
+                                var http=window.location.protocol;
+                                //alert(http+host+filename);
+                                window.location.assign("addclass.php");
+
+                                // $('#success').html(data.msg);
+                                //  var add=data.asss;
+                                //  var inid=data.inserID;
+                                // $('select').append("<option value="+inid+">"+add+"</option>");
+                               
                                                        
                 	   	    },
                           beforeSend:function(){

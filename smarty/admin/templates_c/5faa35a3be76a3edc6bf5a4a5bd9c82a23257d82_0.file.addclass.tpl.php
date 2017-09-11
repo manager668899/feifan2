@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-09 14:20:57
+/* Smarty version 3.1.30, created on 2017-09-11 14:47:20
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addclass.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b3f8c9b9f668_91780422',
+  'unifunc' => 'content_59b63178dea283_60838332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5faa35a3be76a3edc6bf5a4a5bd9c82a23257d82' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addclass.tpl',
-      1 => 1504966588,
+      1 => 1505112402,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b3f8c9b9f668_91780422 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b63178dea283_60838332 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1428759b3f8c9b9b7e2_05412181', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_329359b63178de2580_96321989', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2424159b3f8c9b9f665_49111375', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2290559b63178dea284_02961553', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1428759b3f8c9b9b7e2_05412181 extends Smarty_Internal_Block
+class Block_329359b63178de2580_96321989 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -55,7 +55,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
 							  <option    value="<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
+"><?php echo str_repeat('->',$_smarty_tpl->tpl_vars['v']->value['num']);
+echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
 </option>
 						   <?php
 }
@@ -77,7 +78,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_2424159b3f8c9b9f665_49111375 extends Smarty_Internal_Block
+class Block_2290559b63178dea284_02961553 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -85,11 +86,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
  <?php echo '<script'; ?>
  type="text/javascript">
            $(function(){
-                id=0;
+               var id=0;
                 $("select").change(function(){
                 	id=$(this).val();
                 });
-                name ='';
+               var  name ='';
                  $("input").change(function(){
                 	name=$(this).val();
                 });
@@ -104,12 +105,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 	   	    	names:name
                 	   	    },
                 	   	    success:function(data){
-                                //alert(data.msg);
-                                $('#success').html(data.msg);
-                                 //add='';
-                                 var add=data.asss;
-                                 var inid=data.inserID;
-                                $('select').append("<option value="+inid+">"+add+"</option>");
+                                var host=  window.location.hostname;
+                                var filename=window.location.pathname;
+                                var http=window.location.protocol;
+                                //alert(http+host+filename);
+                                window.location.assign("addclass.php");
+
+                                // $('#success').html(data.msg);
+                                //  var add=data.asss;
+                                //  var inid=data.inserID;
+                                // $('select').append("<option value="+inid+">"+add+"</option>");
+                               
                                                        
                 	   	    },
                           beforeSend:function(){

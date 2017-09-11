@@ -20,9 +20,9 @@
 		  	 	   fileTypeExts:'*.gif; *.jpg; *.png',
 		  	 	   fileSizeLimit:'20480KB',
 		  	 	   fileObjName : 'Filedata', //fileObjName
-		  	 	   queueSizeLimit:50000,
+		  	 	   queueSizeLimit:1,
 		  	 	   uploadLimit : 5,
-		  	 	   buttonText:'点击上传',
+		  	 	   buttonText:'点击加载图片',
 		  	 	   preventCaching:false,
 		  	 	   //auto:false,
 		  	 	   onDestroy:function(){
@@ -30,15 +30,43 @@
 		  	 	   },
 		  	 	   onUploadSuccess:function(file ,data,response){
                          //alert(data);
-                         var imgs= JSON.parse(data);
-                         $('#img').attr('src',imgs.img).attr('width','200px').attr('height','200px');
-                         $('#imgs').append("<div><img src="+imgs.img+" width='20%'></div>");
+                        // var imgs='';
+                        var  imgs= JSON.parse(data);
+                         //$('#img').attr('src',imgs.img).attr('width','200px').attr('height','200px');
+                         $('#imgs').append("<div><img id='ddd'src="+imgs.img+" width='20%'></div>");
+                         //$('#input').html("<input id='sss' type='text'  name='img' value="+imgs.img+">");
+                         $('input[name=img]').attr('value',imgs.img);
 		  	 	   }
 		  	 });
 		  })
   	    
   </script>
-  <div style="width: 20px; height: 20px" ><img src="" id='img'></div>
+ <!--  <div style="width: 20px; height: 20px" ><img src="" id='img'></div> -->
   <span id='imgs'></span> 
+  <span id='input'></span>
+  <span id='upload'>上传图片</span> 
+
+  <input  type='hidden'  name='img' value="">
+
+
+  <script type="text/javascript">
+  	    $(function(){ 
+  	    	   $("#upload").click(function(){
+  	    	   	       var img1='';
+                       img1= $('input[name=img]').val();
+  	    	  	    $.ajax({
+  	    	  	    	 type:'post',
+  	    	  	    	 url:'ajaxfile.php',
+  	    	  	    	 data:{
+  	    	  	    	 	 imgname:img1
+  	    	  	    	 },
+  	    	  	    	 success:function(data){
+                             alert(data);
+  	    	  	    	 }
+  	    	  	    });
+  	    	  });
+  	    })
+
+  </script>
 </body>
 </html>

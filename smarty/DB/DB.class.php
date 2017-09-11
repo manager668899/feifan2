@@ -37,7 +37,7 @@ class DB
       return mysqli_insert_id($this->link);
    }
 
-
+ /*用于递归新增字段查询 如无限分类*/
    public function SelectGo($sql='')
    {
            
@@ -47,8 +47,23 @@ class DB
                      $array[]=$arr;
            }
   
-           return $array;
+           //return $array;
+         return  $this->tree($array);//分配一个二维数组
 
+   }
+   public function tree($array,$id=0,$pid=0)
+   {   
+       static $newArr=array();
+          foreach ($array as $key => $value) {
+                  if($value['pid']==$id){
+                       $value['num']=$pid;
+                       $newArr[]=$value;               
+                      $this->tree($array,$value['id'],$pid+1); 
+                      
+                  }
+             
+          }
+          return $newArr;
    }
 
    public function select()
