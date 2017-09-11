@@ -6,9 +6,30 @@
 {block name='content'}
 
   <form id='form' action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
+            <td class="active" style="width: 120px">
+              <select class="form-control" style="width: 120px" name='class'>
+                     <option value="0">主分类</option>
+                   {foreach $arr as $v}
+                <option    value="{$v['id']}">{str_repeat('->',$v['num'])}{$v['title']}</option>
+               {/foreach}
+              </select>
+          </td>
+
+
         <h3>商品的添加</h3>
         <span>商品名称</span>
         <input type="text" class="form-control required"  name="user" style="width:50%" >
+
+        <button type="button"  onclick="addstyle()"   class=" btn btn-warning">添加属性</button>
+        <p id="p1"></p>
+        <script type="text/javascript">
+           function addstyle(){
+              hhh = '<input type="text" name="style[]" class="aa"  value="" style="width:20%"/>';
+              
+                  document.getElementById("p1").innerHTML+=hhh+"<br/>";
+                 }
+        </script>
+
         <span>商品封面图</span>
         <input type="file" name="idcard[]">
          <span>商品封面图</span>
@@ -30,6 +51,9 @@
           </script>
           <input type="text" class="form-control" placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" >
         </div>
+ 
+
+
 	      <script id="container" name="content" type="text/plain" style="height: 800px;">
         </script>
     <input type="submit" value='提交'>
