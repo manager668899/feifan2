@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+</head>
+<body>
+	<p onclick="jjj()">kkk</p>
+	<p id='yy'>hhhhhhhhhhhh</p>
+	<tr>
+		<td > <span id='ids'>1555</span></td>
+		<td><input onblur="ff(this.value)" type="text" name="fff"></td>
+	</tr>
+	
+	<script type="text/javascript">
+	   var hhh=document.getElementById('ids');
+	   //var num=0;
+	   var num= hhh.innerHTML;
+	   //alert(num);
+
+
+
+		  function jjj(){
+		  	  $.ajax({
+		  	  	  type:'post',
+		  	  	  url:'ajaxfile.php',
+		  	  	  data:{
+		  	  	  	 name:'kkkk',
+		  	  	  	 age:55,
+		  	  	  	 class:'ffff'
+		  	  	  },
+		  	  	  success:function(data){
+                      alert(data);
+		  	  	  }
+		  	  });
+		  }
+		  function ff(data){
+		  	   $.ajax({
+		  	  	  type:'post',
+		  	  	  url:'ajaxfile.php',
+		  	  	  data:{
+		  	  	  	 name:data,
+		  	  	  	 age:num,
+		  	  	  	 class:'ffff'
+		  	  	  },
+		  	  	  success:function(data){
+                      alert(data);
+		  	  	  }
+		  	  });
+		  }
+	</script>
+</body>
+</html>
