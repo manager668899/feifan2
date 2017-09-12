@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提交数据交互等待</title>
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+</head>
+<body>
+	<input id='ff' type="text" name="sss" onchange='hh()'>
+
+	<div id='show' style="display: none">
+		  <h4>数据交互中...</h4>
+		  <img src="timg.gif">
+	</div>
+   <p onclick="ff()">点击UI</p>
+   <div id='dialog'></div>
+ <script type="text/javascript">
+  	  	  //var name=document.getElementById('ff');
+  	  	  //var namess=name.value;
+ 	  function hh(){
+ 	  	var name=document.getElementById('ff');
+ 	  	var namess=name.value;
+         $.ajax({
+         	  url:'ajaxfile.php',
+         	  type:'post',
+         	  data:{
+                  names:namess
+         	  },
+         	  success:function(data){
+                   
+                   $('#show').hide();
+         	  },
+         	  beforeSend:function(){
+         	  	   $('#show').show();
+         	  }
+         });
+ 	  }
+
+
+ 	  function ff(){
+ 	  	  $("#dialog").dialog({
+				  dialogClass: "no-close",
+				  buttons: [
+				    {
+				      text: "OK",
+				      click: function() {
+				        $( this ).dialog( "close" );
+				      }
+				    }
+				  ]
+});
+ 	  }
+ </script>
+</body>
+</html>
