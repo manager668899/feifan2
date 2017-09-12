@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-11 14:49:00
+/* Smarty version 3.1.30, created on 2017-09-12 09:16:10
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addclass.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b631dc6ad657_79763318',
+  'unifunc' => 'content_59b7355a22bb74_42949743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5faa35a3be76a3edc6bf5a4a5bd9c82a23257d82' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addclass.tpl',
-      1 => 1505112536,
+      1 => 1505178965,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b631dc6ad657_79763318 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b7355a22bb74_42949743 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_850059b631dc6a5952_33595282', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_961759b7355a227cf8_86308969', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_760159b631dc6a97d2_64961040', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1093059b7355a22bb79_35589904', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_850059b631dc6a5952_33595282 extends Smarty_Internal_Block
+class Block_961759b7355a227cf8_86308969 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -78,7 +78,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_760159b631dc6a97d2_64961040 extends Smarty_Internal_Block
+class Block_1093059b7355a22bb79_35589904 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -105,9 +105,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 	   	    	names:name
                 	   	    },
                 	   	    success:function(data){
-                                var host=  window.location.hostname;
-                                var filename=window.location.pathname;
-                                var http=window.location.protocol;
+                                // var host=  window.location.hostname;
+                                // var filename=window.location.pathname;
+                                // var http=window.location.protocol;
                                 //alert(http+host+filename);
                                 window.location.assign("addclass.php");
 

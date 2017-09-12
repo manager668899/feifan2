@@ -1,44 +1,52 @@
 {extends file='base/base.tpl'}
 {block name='head'}
+<link rel="stylesheet" type="text/css" href="../static/bootstrap/css/addgoods.css">
 <script type="text/javascript" src="../static/bootstrap/js/jquery.validate.js"></script>
 <script type="text/javascript" src="../static/bootstrap/js/jsAddress.js"></script>
+<script type="text/javascript" src="../static/bootstrap/js/fileshow.js"> </script>
 {/block}
 {block name='content'}
 
   <form id='form' action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
             <td class="active" style="width: 120px">
               <select class="form-control" style="width: 120px" name='class'>
-                     <option value="0">主分类</option>
                    {foreach $arr as $v}
                 <option    value="{$v['id']}">{str_repeat('->',$v['num'])}{$v['title']}</option>
-               {/foreach}
+                  {/foreach}
               </select>
           </td>
 
 
         <h3>商品的添加</h3>
-        <span>商品名称</span>
+        <span>商品名称<span class="ttt">*</span></span>
         <input type="text" class="form-control required"  name="user" style="width:50%" >
 
-        <button type="button"  onclick="addstyle()"   class=" btn btn-warning">添加属性</button>
+        <button type="button"  onclick="addstyle()"   class="btn btn-warning">添加属性</button><span class="ttt">*</span>
         <p id="p1"></p>
         <script type="text/javascript">
            function addstyle(){
               hhh = '<input type="text" name="style[]" class="aa"  value="" style="width:20%"/>';
               
-                  document.getElementById("p1").innerHTML+=hhh+"<br/>";
+                  document.getElementById("p1").innerHTML+=hhh+"属性<span class='ttt'>*</span><br/>";
+
                  }
         </script>
 
-        <span>商品封面图</span>
-        <input type="file" name="idcard[]">
-         <span>商品封面图</span>
-        <input type="file" name="idcard[]">
-        <span>商品的价格</span>
+        <span>商品封面图<span class="ttt">*</span></span>
+        <input type="file" name="idcard[]" onchange='jjj(this)'>
+          <div id="preview">
+            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg'>
+         </div>
+         <span>商品封面图<span class="ttt">*</span></span>
+        <input type="file" name="idcard[]" onchange='jjjj(this)'>
+          <div id="previews">
+            <img id="imgheads" width=100 height=100 border=0 src='blank.jpg'>
+         </div>
+        <span>商品的价格<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="price" style="width:20%">
-        <span>商品的库存数量</span>
+        <span>商品的库存数量<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="mun" style="width:20%">
-        <span>商品的产地</span>
+        <span>商品的产地<span class="ttt">*</span></span>
         
 
         <div>
@@ -49,7 +57,7 @@
             addressInit('cmbProvince', 'cmbCity', 'cmbArea', '陕西', '西安市', '雁塔区');
             addressInit('Select1', 'Select2', 'Select3');
           </script>
-          <input type="text" class="form-control" placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" >
+          <input type="text"  placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" ><span class="ttt">*</span>
         </div>
  
 
@@ -108,6 +116,9 @@
              });
         })
         
+
+        /////
+   
     </script>
    
  

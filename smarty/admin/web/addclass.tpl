@@ -43,9 +43,9 @@
                 	   	    	names:name
                 	   	    },
                 	   	    success:function(data){
-                                var host=  window.location.hostname;
-                                var filename=window.location.pathname;
-                                var http=window.location.protocol;
+                                // var host=  window.location.hostname;
+                                // var filename=window.location.pathname;
+                                // var http=window.location.protocol;
                                 //alert(http+host+filename);
                                 window.location.assign("addclass.php");
 

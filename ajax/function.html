@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量作用域</title>
+</head>
+<body>
+<p onclick="ss()">点击</p>
+<p onclick="ff()">点击f</p>
+	<script type="text/javascript">
+		  var a='hhh';
+		  var pp='';
+		  function ss()
+		  { 
+		  	 pp='kkk';
+		  	 alert(a);
+		  }
+  
+		  function ff(){
+		  	   pp='llll';
+		  	   ssss='ssss1';
+		  	   var ssss='ssss';
+		  	   
+		  	   alert(pp);
+		  	   alert(ss);
+		  	   alert(ssss);
+		  }
+
+		
+	</script>
+</body>
+</html>

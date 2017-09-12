@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-11 13:38:39
+/* Smarty version 3.1.30, created on 2017-09-12 16:50:24
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addgoods.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b691df4ac316_14016661',
+  'unifunc' => 'content_59b79fd0b9daa2_79843854',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99302110306788138034c49bca95c49531d8adb4' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addgoods.tpl',
-      1 => 1505137116,
+      1 => 1505206219,
       2 => 'file',
     ),
   ),
@@ -21,43 +21,47 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b691df4ac316_14016661 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b79fd0b9daa2_79843854 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_377759b691df485204_60653926', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2411359b79fd0b7e6a7_21101080', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1708559b691df4a8495_17100671', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1855859b79fd0b99c26_56089558', 'content');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_243059b691df4a8499_50148359', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1418859b79fd0b9daa0_16450957', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_377759b691df485204_60653926 extends Smarty_Internal_Block
+class Block_2411359b79fd0b7e6a7_21101080 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<link rel="stylesheet" type="text/css" href="../static/bootstrap/css/addgoods.css">
 <?php echo '<script'; ?>
  type="text/javascript" src="../static/bootstrap/js/jquery.validate.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  type="text/javascript" src="../static/bootstrap/js/jsAddress.js"><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ type="text/javascript" src="../static/bootstrap/js/fileshow.js"> <?php echo '</script'; ?>
+>
 <?php
 }
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_1708559b691df4a8495_17100671 extends Smarty_Internal_Block
+class Block_1855859b79fd0b99c26_56089558 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -66,7 +70,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   <form id='form' action="" method="post" enctype="multipart/form-data" style="width: 80%;height: 800px;margin: 80px auto 80px auto">
             <td class="active" style="width: 120px">
               <select class="form-control" style="width: 120px" name='class'>
-                     <option value="0">主分类</option>
                    <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arr']->value, 'v');
 if ($_from !== null) {
@@ -76,7 +79,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 "><?php echo str_repeat('->',$_smarty_tpl->tpl_vars['v']->value['num']);
 echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
 </option>
-               <?php
+                  <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
@@ -87,30 +90,37 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
         <h3>商品的添加</h3>
-        <span>商品名称</span>
+        <span>商品名称<span class="ttt">*</span></span>
         <input type="text" class="form-control required"  name="user" style="width:50%" >
 
-        <button type="button"  onclick="addstyle()"   class=" btn btn-warning">添加属性</button>
+        <button type="button"  onclick="addstyle()"   class="btn btn-warning">添加属性</button><span class="ttt">*</span>
         <p id="p1"></p>
         <?php echo '<script'; ?>
  type="text/javascript">
            function addstyle(){
               hhh = '<input type="text" name="style[]" class="aa"  value="" style="width:20%"/>';
               
-                  document.getElementById("p1").innerHTML+=hhh+"<br/>";
+                  document.getElementById("p1").innerHTML+=hhh+"属性<span class='ttt'>*</span><br/>";
+
                  }
         <?php echo '</script'; ?>
 >
 
-        <span>商品封面图</span>
-        <input type="file" name="idcard[]">
-         <span>商品封面图</span>
-        <input type="file" name="idcard[]">
-        <span>商品的价格</span>
+        <span>商品封面图<span class="ttt">*</span></span>
+        <input type="file" name="idcard[]" onchange='jjj(this)'>
+          <div id="preview">
+            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg'>
+         </div>
+         <span>商品封面图<span class="ttt">*</span></span>
+        <input type="file" name="idcard[]" onchange='jjjj(this)'>
+          <div id="previews">
+            <img id="imgheads" width=100 height=100 border=0 src='blank.jpg'>
+         </div>
+        <span>商品的价格<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="price" style="width:20%">
-        <span>商品的库存数量</span>
+        <span>商品的库存数量<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="mun" style="width:20%">
-        <span>商品的产地</span>
+        <span>商品的产地<span class="ttt">*</span></span>
         
 
         <div>
@@ -123,7 +133,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             addressInit('Select1', 'Select2', 'Select3');
           <?php echo '</script'; ?>
 >
-          <input type="text" class="form-control" placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" >
+          <input type="text"  placeholder="详细地址例如:XX路XX号XX楼XX层XX房号" aria-describedby="basic-addon1" name="address[]" style="width:50%" ><span class="ttt">*</span>
         </div>
  
 
@@ -157,7 +167,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_243059b691df4a8499_50148359 extends Smarty_Internal_Block
+class Block_1418859b79fd0b9daa0_16450957 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -198,6 +208,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
              });
         })
         
+
+        /////
+   
     <?php echo '</script'; ?>
 >
    

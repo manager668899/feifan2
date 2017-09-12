@@ -10,12 +10,13 @@ CREATE TABLE `tg_user` (
 CREATE TABLE tg_goods(
 	id int(4) unsigned not null AUTO_INCREMENT COMMENT '商品表',
 	name varchar(100) not null DEFAULT '' COMMENT '商品名称',
-	price DOUBLE(5,2) unsigned not null DEFAULT 00.00 COMMENT '商品的价格',
+	price DOUBLE(10,2) unsigned not null DEFAULT 00.00 COMMENT '商品的价格',
 	mun MEDIUMINT(4) unsigned not null DEFAULT 100 COMMENT'库存数量',
 	address varchar(300) not null DEFAULT'' COMMENT'地址',
 	content text(1000) not null DEFAULT '' COMMENT '介绍详情',
 	pic varchar(200) not null DEFAULT'' COMMENT '商品封面图1',
 	pic2 varchar(200) not null DEFAULT '' COMMENT '商品封面图2',
+	classid int(11) NOT NULL,
 	PRIMARY KEY (id),
 	index (name)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -25,4 +26,11 @@ CREATE TABLE tg_class(
 	title varchar(30) not null  DEFAULT '' COMMENT '分类名称',
 	pid smallint(4) unsigned not null  COMMENT 'tg_classID',
 	PRIMARY KEY (id)
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+CREATE TABLE tg_style(
+   id int(4) unsigned not null AUTO_INCREMENT COMMENT'商品属性表的id',
+   stylename varchar(50) not null DEFAULT '' COMMENT '属性名称',
+   class_id int(4) not null COMMENT '商品的id',
+   PRIMARY KEY (id)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
