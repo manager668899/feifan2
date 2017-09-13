@@ -66,16 +66,16 @@ class DB
           return $newArr;
    }
 
-   public function select()
+   public function select($sql='')
    {
-           $sql="select * from study1";
+           
            $resa=mysqli_query($this->link,$sql);
            $array=[];
            while ( $arr=mysqli_fetch_assoc($resa)) {
                      $array[]=$arr;
            }
-           //var_dump($array);
-           return $this;
+           return $array;
+           //return $this;
 
    }
    public function query($sql='')

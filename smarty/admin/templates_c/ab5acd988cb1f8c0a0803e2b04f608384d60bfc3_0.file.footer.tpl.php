@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-09 09:40:57
+/* Smarty version 3.1.30, created on 2017-09-13 16:02:09
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\base\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b346a9dddcd7_76423469',
+  'unifunc' => 'content_59b8e601e9f965_08927035',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59b346a9dddcd7_76423469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b8e601e9f965_08927035 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,13 +28,13 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2619859b346a9dddcd6_04437468', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1154559b8e601e9bae1_47521597', 'js');
 ?>
 
   </body>
 </html><?php }
 /* {block 'js'} */
-class Block_2619859b346a9dddcd6_04437468 extends Smarty_Internal_Block
+class Block_1154559b8e601e9bae1_47521597 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }

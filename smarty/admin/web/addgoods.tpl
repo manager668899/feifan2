@@ -35,7 +35,7 @@
         <span>商品封面图<span class="ttt">*</span></span>
         <input type="file" name="idcard[]" onchange='jjj(this)'>
           <div id="preview">
-            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg'>
+            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg' >
          </div>
          <span>商品封面图<span class="ttt">*</span></span>
         <input type="file" name="idcard[]" onchange='jjjj(this)'>

@@ -19,7 +19,10 @@
 		</form>
     </div>
     <div class="col-md-4"></div>
-
+      <div id='show' style="display: none">
+       <h4>数据交互中...</h4>
+       <img src="../static/timg.gif">
+      </div>
 {/block}
 {block name='js'}
        <script type="text/javascript">
@@ -32,6 +35,7 @@
               	   	   success:function(data){
                            var obj=JSON.parse(data);
                             alert(obj.msg);
+                            $('#show').hide();
               	   	   },
               	   	   beforeSend:function(){
               	   	   	    var user=$('input[name=user]').val();
@@ -45,6 +49,7 @@
                                 alert('两次密码不一致,或者密码为空,长度必须是6位以上');
                                 return false;
               	   	   	    }
+                             $('#show').show();
               	   	   }
 
               	   });

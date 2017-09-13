@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-12 16:50:24
+/* Smarty version 3.1.30, created on 2017-09-13 17:42:04
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addgoods.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b79fd0b9daa2_79843854',
+  'unifunc' => 'content_59b8fd6cc16b31_75499230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99302110306788138034c49bca95c49531d8adb4' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addgoods.tpl',
-      1 => 1505206219,
+      1 => 1505282792,
       2 => 'file',
     ),
   ),
@@ -21,27 +21,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b79fd0b9daa2_79843854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b8fd6cc16b31_75499230 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2411359b79fd0b7e6a7_21101080', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1708359b8fd6cbf38a6_59401569', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1855859b79fd0b99c26_56089558', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_521759b8fd6cc12cb1_70236902', 'content');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1418859b79fd0b9daa0_16450957', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1646059b8fd6cc16b34_17633811', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_2411359b79fd0b7e6a7_21101080 extends Smarty_Internal_Block
+class Block_1708359b8fd6cbf38a6_59401569 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_1855859b79fd0b99c26_56089558 extends Smarty_Internal_Block
+class Block_521759b8fd6cc12cb1_70236902 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -109,7 +109,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         <span>商品封面图<span class="ttt">*</span></span>
         <input type="file" name="idcard[]" onchange='jjj(this)'>
           <div id="preview">
-            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg'>
+            <img id="imghead" width=100 height=100 border=0 src='blankmain.jpg' >
          </div>
          <span>商品封面图<span class="ttt">*</span></span>
         <input type="file" name="idcard[]" onchange='jjjj(this)'>
@@ -167,7 +167,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_1418859b79fd0b9daa0_16450957 extends Smarty_Internal_Block
+class Block_1646059b8fd6cc16b34_17633811 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

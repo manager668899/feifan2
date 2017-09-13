@@ -17,6 +17,7 @@ CREATE TABLE tg_goods(
 	pic varchar(200) not null DEFAULT'' COMMENT '商品封面图1',
 	pic2 varchar(200) not null DEFAULT '' COMMENT '商品封面图2',
 	classid int(11) NOT NULL,
+	`times` int(4) NOT NULL,
 	PRIMARY KEY (id),
 	index (name)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -34,3 +35,7 @@ CREATE TABLE tg_style(
    class_id int(4) not null COMMENT '商品的id',
    PRIMARY KEY (id)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+select tg_goods.name,tg_class.title from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;
+select * from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;
+select * ,tg_class.id as kk from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;

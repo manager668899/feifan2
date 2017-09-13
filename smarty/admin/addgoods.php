@@ -47,15 +47,16 @@ if($methodType=='GET'){
 		$name=$_FILES['idcard']['name'][$i];
 		$namefile=$_FILES['idcard']['tmp_name'][$i];
 	    $arr=explode('.', $name);
-	    $imgname[$i]="../uploade/".time().mt_rand(1,100000).'.'.$arr[1];
+	    $imgname[$i]=time().mt_rand(1,100000).'.'.$arr[1];
 	      //图片的名称
 	     //$imgname[]=time().mt_rand(1,100000).'.'.$arr[1];
-	     $bool=move_uploaded_file($namefile,$imgname[$i]);
+	     $bool=move_uploaded_file($namefile,"../uploade/".$imgname[$i]);
 
 	}
 	    
     //echo $arrAddress;
-    $sql="insert into tg_goods(name,price,mun,address,content,pic,pic2,classid)values('{$names}',{$price},{$mun},'{$arrAddress}','{$content}','{$imgname[0]}','{$imgname[1]}',{$classID})";
+    $time=time();
+    $sql="insert into tg_goods(name,price,mun,address,content,pic,pic2,classid,times)values('{$names}',{$price},{$mun},'{$arrAddress}','{$content}','{$imgname[0]}','{$imgname[1]}',{$classID},{$time})";
     $bool=DB::getDB()->query($sql);
  
     $goodsid=DB::getDB()->getinsertId();
@@ -64,7 +65,10 @@ if($methodType=='GET'){
             DB::getDB()->query($sql2);
       }
 
-    var_dump($bool);
+    echo "<script  type='text/javascript'>
+              alert('添加成功');
+              window.location.assign('addgoods.php');
+          </script>";
 
 }
 

@@ -16,6 +16,11 @@
     </div>
     <div class="col-md-4"></div>
 
+      <div id='show' style="display: none">
+       <h4>数据交互中...</h4>
+       <img src="../static/timg.gif">
+      </div>
+
 {/block}
 {block name='js'}
   <script type="text/javascript">
@@ -45,6 +50,7 @@
               	   	   	    	alert('密码不能为空');
               	   	   	    	return false;
               	   	   	    }
+                            $('#show').show();
               	   	   	    
               	   	   }
 
