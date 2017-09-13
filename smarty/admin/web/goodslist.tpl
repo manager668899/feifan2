@@ -24,9 +24,13 @@
 		      <td class="info"><a href="">删除</a></td>
       </tr>
       {/foreach}
+      
   </table>
   <div id='load' style="display: none">加载中<img src="../static/load.gif" width="5%"></div>
-  <div><button onclick="load()">加载</button></div>
+  <div>
+      <button onclick="load()">加载</button>
+
+  </div>
 {/block}
 {block name='js'}
       <script type="text/javascript">
@@ -35,12 +39,13 @@
                   type:'post',
                   url:'goodslist.php',
                   data:{
-                    num:20,
+                    num:5,
                   },
                   success:function(data){
                      
                      $('#load').hide();
-                    // window.location.assign('goodslist.php');
+                     //alert(data);
+                     window.location.assign('goodslist.php');
                   },
                   beforeSend:function(){
                     $('#load').show();

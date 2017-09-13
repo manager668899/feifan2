@@ -57,8 +57,11 @@ class DB
           foreach ($array as $key => $value) {
                   if($value['pid']==$id){
                        $value['num']=$pid;
-                       $newArr[]=$value;               
+                       $newArr[]=$value;  
+                       //var_dump($newArr);             
                       $this->tree($array,$value['id'],$pid+1); 
+                      //var_dump($value);
+                      //echo '<hr/>';
                       
                   }
              

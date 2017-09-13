@@ -20,6 +20,7 @@
 			 </tr> 
 			 <span id='success'></span>
       </table>
+      <div id='fff' style="display: none">正在加载中<img src="../static/timg.gif"></div>
 {/block}
 {block name ='js'}
  <script type="text/javascript">
@@ -57,9 +58,11 @@
                                                        
                 	   	    },
                           beforeSend:function(){
+
                               if(name==''){
                                   return false;
                               }
+                              $('#fff').show();
                           }
                 	   });
                 });

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-13 16:02:09
+/* Smarty version 3.1.30, created on 2017-09-13 15:53:44
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\goodslist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b8e601c26bc0_22292999',
+  'unifunc' => 'content_59b9548842c764_32280469',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '242551d8571970bba18cd24423187c03f97ced06' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\goodslist.tpl',
-      1 => 1505289671,
+      1 => 1505318020,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b8e601c26bc0_22292999 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b9548842c764_32280469 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1766459b8e601c22d41_92594082', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1232959b9548842c767_37453756', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3233359b8e601c26bc5_47291480', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3140459b9548842c761_54141930', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1766459b8e601c22d41_92594082 extends Smarty_Internal_Block
+class Block_1232959b9548842c767_37453756 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -81,15 +81,19 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
+      
   </table>
   <div id='load' style="display: none">加载中<img src="../static/load.gif" width="5%"></div>
-  <div><button onclick="load()">加载</button></div>
+  <div>
+      <button onclick="load()">加载</button>
+
+  </div>
 <?php
 }
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_3233359b8e601c26bc5_47291480 extends Smarty_Internal_Block
+class Block_3140459b9548842c761_54141930 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -101,12 +105,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                   type:'post',
                   url:'goodslist.php',
                   data:{
-                    num:20,
+                    num:5,
                   },
                   success:function(data){
                      
                      $('#load').hide();
-                    // window.location.assign('goodslist.php');
+                     //alert(data);
+                     window.location.assign('goodslist.php');
                   },
                   beforeSend:function(){
                     $('#load').show();

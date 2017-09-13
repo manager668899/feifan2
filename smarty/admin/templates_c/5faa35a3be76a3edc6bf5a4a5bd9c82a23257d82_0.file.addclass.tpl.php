@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-13 17:42:07
+/* Smarty version 3.1.30, created on 2017-09-13 13:27:47
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addclass.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b8fd6fc4e0f1_28948950',
+  'unifunc' => 'content_59b9325384f9e4_65130822',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5faa35a3be76a3edc6bf5a4a5bd9c82a23257d82' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addclass.tpl',
-      1 => 1505178965,
+      1 => 1505309263,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b8fd6fc4e0f1_28948950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59b9325384f9e4_65130822 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1001359b8fd6fc463f4_19211042', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_805359b9325384f9e2_79681451', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_288659b8fd6fc4a274_75944421', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1201859b9325384f9e1_93953429', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1001359b8fd6fc463f4_19211042 extends Smarty_Internal_Block
+class Block_805359b9325384f9e2_79681451 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -73,12 +73,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 			 </tr> 
 			 <span id='success'></span>
       </table>
+      <div id='fff' style="display: none">正在加载中<img src="../static/timg.gif"></div>
 <?php
 }
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_288659b8fd6fc4a274_75944421 extends Smarty_Internal_Block
+class Block_1201859b9325384f9e1_93953429 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -119,9 +120,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                                        
                 	   	    },
                           beforeSend:function(){
+
                               if(name==''){
                                   return false;
                               }
+                              $('#fff').show();
                           }
                 	   });
                 });

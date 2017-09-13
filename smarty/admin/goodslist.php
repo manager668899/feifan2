@@ -2,13 +2,10 @@
 require_once('config.php');
 
 //$limitNum=0;
-//$methodType=$_SERVER['REQUEST_METHOD'];
 
-if(isset($_GET['num'])){
-	echo 'ddd';
 
-}
  //$sql="select * from tg_goods";
+
 
 
 $limitNum=20;
