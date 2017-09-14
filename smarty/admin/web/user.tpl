@@ -15,7 +15,6 @@
     	 {/foreach}
     </table>
 
-
 	<nav aria-label="Page navigation">
 			  <ul class="pagination">
 			    <li>
@@ -25,15 +24,11 @@
 			    </li>
 			    <li><a href="user.php?page=1">首页</a></li>
 			        {if $page>3}<li><a href="">...</a></li>{/if}
+                    
+	                 {for $uu=$page to $n} 
+					    <li><a href="user.php?page={$uu}">{$uu}</a></li>
+					 {/for}
 
-			    <li><a href="user.php?page={$page}">{$page}</a></li>
-			    <li><a href="user.php?page={$page+1}">{$page+1}</a></li>
-			    <li><a href="user.php?page={$page+2}">{$page+2}</a></li>
-			    <li><a href="user.php?page={$page+3}">{$page+3}</a></li>
-			    <li><a href="user.php?page={$page+4}">{$page+4}</a></li>
-			    <li><a href="user.php?page={$page+5}">{$page+5}</a></li>
-			    <li><a href="user.php?page={$page+6}">{$page+6}</a></li>
-			    <li><a href="user.php?page={$page+7}">{$page+7}</a></li>
 			       {if $page<($n-$page)}<li><a href="">...</a></li>{/if}
 			    <li><a href="user.php?page={$n}">尾页</a></li>
 			    <li>
