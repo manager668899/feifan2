@@ -1,6 +1,5 @@
 <?php
 require_once('config.php');
-
 $methodType=$_SERVER['REQUEST_METHOD'];
 if($methodType=='GET'){
 

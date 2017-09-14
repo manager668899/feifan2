@@ -18,6 +18,7 @@ CREATE TABLE tg_goods(
 	pic2 varchar(200) not null DEFAULT '' COMMENT '商品封面图2',
 	classid int(11) NOT NULL,
 	`times` int(4) NOT NULL,
+	`status` smallint(2) NOT NULL DEFAULT '1',
 	PRIMARY KEY (id),
 	index (name)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;

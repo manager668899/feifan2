@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-13 13:27:47
+/* Smarty version 3.1.30, created on 2017-09-14 15:32:56
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\addclass.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b9325384f9e4_65130822',
+  'unifunc' => 'content_59ba30a8a7c2b9_10388013',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5faa35a3be76a3edc6bf5a4a5bd9c82a23257d82' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\addclass.tpl',
-      1 => 1505309263,
+      1 => 1505348558,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b9325384f9e4_65130822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ba30a8a7c2b9_10388013 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_805359b9325384f9e2_79681451', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3159459ba30a8a78430_14865994', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1201859b9325384f9e1_93953429', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2090959ba30a8a7c2b4_12530339', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_805359b9325384f9e2_79681451 extends Smarty_Internal_Block
+class Block_3159459ba30a8a78430_14865994 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -79,7 +79,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_1201859b9325384f9e1_93953429 extends Smarty_Internal_Block
+class Block_2090959ba30a8a7c2b4_12530339 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

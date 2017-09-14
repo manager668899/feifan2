@@ -31,10 +31,10 @@
       	<th width="5%">库存</th>
       	<th width="10%">缩略图</th>
       	<th width="15%">日期</th>
-      	<th width="15%" colspan="2">操作</th>
+      	<th width="15%" >操作</th>
       </tr>
       {foreach $arr as $v}
-      <tr align="center">
+      <tr align="center" >
       	  <td class="active">{$v['id']}</td>
           <td class="success">{$v['title']}</td>
 		      <td class="success">{$v['name']}</td>
@@ -42,8 +42,7 @@
 		      <td class="danger">{$v['mun']}</td>
 		      <td class="info"><img src="../uploade/{$v['pic']}" width="30%"></td>
 		      <td class="danger">{date('Y-m-d H:i:s',$v['times'])}</td>
-		      <td class="info"><a href="updateGoods.php?id={$v['id']}">修改</a></td>
-		      <td class="info"><a href="del.php?id={$v['id']}" onclick="return del()">删除</a></td>
+		      <td class="info"><a href="restore.php?id={$v['id']}" onclick="return del()">还原</a></td>
       </tr>
       {/foreach}
       
@@ -103,7 +102,7 @@
            }
 
           function del(){
-             return confirm('你确定要删除吗');
+             return confirm('你确定还原吗');
           }
 
           function Atime(){

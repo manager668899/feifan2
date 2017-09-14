@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-14 16:34:07
-  from "D:\phpStudy\WWW\feifan2\smarty\admin\web\goodslist.tpl" */
+/* Smarty version 3.1.30, created on 2017-09-14 15:29:27
+  from "D:\phpStudy\WWW\feifan2\smarty\admin\web\retrieve.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ba3eff432948_93030977',
+  'unifunc' => 'content_59ba2fd79093b2_80745918',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '242551d8571970bba18cd24423187c03f97ced06' => 
+    'bcc9c1a66f19d4239d678e7bbc1d9aca8aa6aa87' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\goodslist.tpl',
-      1 => 1505378043,
+      0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\retrieve.tpl',
+      1 => 1505374163,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59ba3eff432948_93030977 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ba2fd79093b2_80745918 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1670659ba3eff42eac4_97039230', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2790559ba2fd7905537_76733136', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_411959ba3eff432941_47822816', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_819759ba2fd79093b8_10273222', 'js');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1670659ba3eff42eac4_97039230 extends Smarty_Internal_Block
+class Block_2790559ba2fd7905537_76733136 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -74,14 +74,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       	<th width="5%">库存</th>
       	<th width="10%">缩略图</th>
       	<th width="15%">日期</th>
-      	<th width="15%" colspan="2">操作</th>
+      	<th width="15%" >操作</th>
       </tr>
       <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arr']->value, 'v');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
-      <tr align="center">
+      <tr align="center" >
       	  <td class="active"><?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 </td>
           <td class="success"><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
@@ -96,10 +96,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 " width="30%"></td>
 		      <td class="danger"><?php echo date('Y-m-d H:i:s',$_smarty_tpl->tpl_vars['v']->value['times']);?>
 </td>
-		      <td class="info"><a href="updateGoods.php?id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-">修改</a></td>
-		      <td class="info"><a href="del.php?id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-" onclick="return del()">删除</a></td>
+		      <td class="info"><a href="restore.php?id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+" onclick="return del()">还原</a></td>
       </tr>
       <?php
 }
@@ -139,7 +137,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_411959ba3eff432941_47822816 extends Smarty_Internal_Block
+class Block_819759ba2fd79093b8_10273222 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -170,7 +168,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
            }
 
           function del(){
-             return confirm('你确定要删除吗');
+             return confirm('你确定还原吗');
           }
 
           function Atime(){

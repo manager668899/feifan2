@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-13 16:02:09
+/* Smarty version 3.1.30, created on 2017-09-14 17:24:15
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\base\head.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b8e601e749d4_23902489',
+  'unifunc' => 'content_59ba4abf09cbf6_14865390',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c55508e1c85dca74491bfe7474f7dc695acecb14' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\base\\head.tpl',
-      1 => 1504940119,
+      1 => 1505381029,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59b8e601e749d4_23902489 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ba4abf09cbf6_14865390 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -44,7 +44,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
  src="../static/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_404759b8e601e61156_12987722', "head");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1014359ba4abf098d63_78682822', "head");
 ?>
 
 
@@ -60,7 +60,10 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_404759b8e601e61156
     <![endif]-->
   </head>
   <body>
+
      <div class="container-fluid">
+         <div id='uuu' style="text-align: center; position: absolute;z-index:5;left: 30%;display: none">数据加载中
+         </div>
         <ul class="nav nav-pills">
 		  <li role="presentation" class="active"><a href="#">Home</a></li>
 		  <li role="presentation"><a href="#">Profile</a></li>
@@ -71,9 +74,10 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_404759b8e601e61156
 			  <div class="col-md-2">
 			       <ul class="list-unstyled">
 					  <li>商品管理</li>
-					  <li><a href="goodslist.php">...商品列表</a></li>
-					  <li><a href="addgoods.php">...商品添加</a></li>
-					  <li><a href="addclass.php">...商品分类</a></li>
+					  <li><a href="goodslist.php" onclick="uuu(this.href)">...商品列表</a></li>
+					  <li><a href="addgoods.php" onclick="uuu(this.href)">...商品添加</a></li>
+					  <li><a href="addclass.php" onclick="uuu(this.href)">...商品分类</a></li>
+					  <li><a href="retrieve.php" onclick="uuu(this.href)">...回收站</a></li>
 					  <li>系统管理</li>
 					  <li>...系统管理</li>
 					  <li>...系统管理</li>
@@ -91,7 +95,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_404759b8e601e61156
 			  </div>
 			  <div class="col-md-10">
 			  	    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3195759b8e601e70b53_46065864', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2535859ba4abf09cbf5_76424883', 'content');
 ?>
 
 			  </div>
@@ -101,14 +105,14 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3195759b8e601e70b5
 
 <?php }
 /* {block "head"} */
-class Block_404759b8e601e61156_12987722 extends Smarty_Internal_Block
+class Block_1014359ba4abf098d63_78682822 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "head"} */
 /* {block 'content'} */
-class Block_3195759b8e601e70b53_46065864 extends Smarty_Internal_Block
+class Block_2535859ba4abf09cbf5_76424883 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
