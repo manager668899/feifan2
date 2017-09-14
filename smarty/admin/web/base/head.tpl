@@ -41,8 +41,8 @@
 					  <li><a href="addgoods.php" onclick="uuu(this.href)">...商品添加</a></li>
 					  <li><a href="addclass.php" onclick="uuu(this.href)">...商品分类</a></li>
 					  <li><a href="retrieve.php" onclick="uuu(this.href)">...回收站</a></li>
-					  <li>系统管理</li>
-					  <li>...系统管理</li>
+					  <li>用户管理</li>
+					  <li><a href="user.php">...会员列表</a></li>
 					  <li>...系统管理</li>
 					  <li>...系统管理</li>
 					  <li>系统管理</li>
