@@ -11,14 +11,14 @@ if(isset($_GET['page'])){
         //总条数
 $sql2="select COUNT(*) as id from study1";
 $count=DB::getDB()->login($sql2);
-echo '总条数';
-echo $count['id'];    //总条数
+// echo '总条数';
+// echo $count['id'];    //总条数
 
 
-echo '<hr/>';
-echo '总页数';
+// echo '<hr/>';
+// echo '总页数';
 $showPage=5;
-echo $n=ceil($count['id']/$showPage) ;  //总页数
+ $n=ceil($count['id']/$showPage) ;  //总页数
 
 if(isset($_GET['page'])){
     $page=$_GET['page'];//第几页
@@ -31,10 +31,10 @@ if(isset($_GET['page'])){
 }
 
 $s=($page-1)*$showPage;
-echo '<hr/>';
-echo $page;
+// echo '<hr/>';
+// echo $page;
 $sql="select * from study1 limit {$s},{$showPage}"; //5/
-echo $sql;
+// echo $sql;
 //偏移量
 $pageoffset=($page-1)/2;
 $show=5;
@@ -44,4 +44,5 @@ $study1=DB::getDB()->select($sql);
 $smarty->assign('arr',$study1);
 $smarty->assign('page',$page);
 $smarty->assign('n',$n);
+$smarty->assign('showpage',$showPage);
 $smarty->display('user.tpl');
