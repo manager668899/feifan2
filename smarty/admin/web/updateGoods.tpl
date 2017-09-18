@@ -12,12 +12,12 @@
               <select class="form-control" style="width: 120px" name='class'>
                    {foreach $arr as $v}
                           
-            <option  value="{$v['id']}" {if $goods['id']==$v['id']} selected="selected" {/if}>{str_repeat('->',$v['num'])}{$v['title']} {$goods['id']}</option>
+            <option  value="{$v['id']}" {if $goods['classid']==$v['id']} selected="selected" {/if}>{str_repeat('->',$v['num'])}{$v['title']}</option>
                    {/foreach}
               </select>
           </td>
 
-
+        <input type="hidden" name="id" value="{$goods['id']}">
         <h3>商品的修改</h3>
         <span>商品名称<span class="ttt">*</span></span>
         <input type="text" class="form-control required"  name="user" style="width:50%" value="{$goods['name']}" >
@@ -32,16 +32,16 @@
 
                  }
         </script>
+        {foreach $style as $vv}
+           <input type="text" name="styleup[]" class="aa" value="{$vv['stylename']}" ><br/>
+        {/foreach}
 
         <span>商品封面图<span class="ttt">*</span></span>
+
         <input type="file" name="idcard[]" onchange='jjj(this)'>
+
           <div id="preview">
             <img id="imghead" width=100 height=100 border=0 src='../uploade/{$goods['pic']}' >
-         </div>
-         <span>商品封面图<span class="ttt">*</span></span>
-        <input type="file" name="idcard[]" onchange='jjjj(this)'>
-          <div id="previews">
-            <img id="imgheads" width=100 height=100 border=0 src='../uploade/{$goods['pic2']}'>
          </div>
         <span>商品的价格<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="price" style="width:20%" value="{$goods['price']}" >
@@ -118,8 +118,6 @@
              });
         })
         
-
-        /////
    
     </script>
    

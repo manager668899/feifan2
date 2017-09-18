@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-14 17:44:37
+/* Smarty version 3.1.30, created on 2017-09-18 15:00:42
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\updateGoods.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ba4f85a16403_98849543',
+  'unifunc' => 'content_59bf6f1a110577_47574159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bd2ef03dcc5f6686043a6f8f8d6599873f406cec' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\updateGoods.tpl',
-      1 => 1505382273,
+      1 => 1505718038,
       2 => 'file',
     ),
   ),
@@ -21,27 +21,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59ba4f85a16403_98849543 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59bf6f1a110577_47574159 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2010159ba4f859dba89_46011559', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1351859bf6f1a0dd8f9_38853350', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13859ba4f85a0e708_66473404', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2086659bf6f1a10c6f2_72310832', 'content');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1255459ba4f85a16409_93912437', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1938759bf6f1a110577_42122233', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_2010159ba4f859dba89_46011559 extends Smarty_Internal_Block
+class Block_1351859bf6f1a0dd8f9_38853350 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_13859ba4f85a0e708_66473404 extends Smarty_Internal_Block
+class Block_2086659bf6f1a10c6f2_72310832 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -77,9 +77,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
                           
             <option  value="<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-" <?php if ($_smarty_tpl->tpl_vars['goods']->value['id'] == $_smarty_tpl->tpl_vars['v']->value['id']) {?> selected="selected" <?php }?>><?php echo str_repeat('->',$_smarty_tpl->tpl_vars['v']->value['num']);
+" <?php if ($_smarty_tpl->tpl_vars['goods']->value['classid'] == $_smarty_tpl->tpl_vars['v']->value['id']) {?> selected="selected" <?php }?>><?php echo str_repeat('->',$_smarty_tpl->tpl_vars['v']->value['num']);
 echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
- <?php echo $_smarty_tpl->tpl_vars['goods']->value['id'];?>
 </option>
                    <?php
 }
@@ -90,7 +89,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
               </select>
           </td>
 
-
+        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['id'];?>
+">
         <h3>商品的修改</h3>
         <span>商品名称<span class="ttt">*</span></span>
         <input type="text" class="form-control required"  name="user" style="width:50%" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['name'];?>
@@ -108,18 +108,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                  }
         <?php echo '</script'; ?>
 >
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['style']->value, 'vv');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['vv']->value) {
+?>
+           <input type="text" name="styleup[]" class="aa" value="<?php echo $_smarty_tpl->tpl_vars['vv']->value['stylename'];?>
+" ><br/>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
 
         <span>商品封面图<span class="ttt">*</span></span>
+
         <input type="file" name="idcard[]" onchange='jjj(this)'>
+
           <div id="preview">
             <img id="imghead" width=100 height=100 border=0 src='../uploade/<?php echo $_smarty_tpl->tpl_vars['goods']->value['pic'];?>
 ' >
-         </div>
-         <span>商品封面图<span class="ttt">*</span></span>
-        <input type="file" name="idcard[]" onchange='jjjj(this)'>
-          <div id="previews">
-            <img id="imgheads" width=100 height=100 border=0 src='../uploade/<?php echo $_smarty_tpl->tpl_vars['goods']->value['pic2'];?>
-'>
          </div>
         <span>商品的价格<span class="ttt">*</span></span>
         <input type="text" class="form-control required" name="price" style="width:20%" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['price'];?>
@@ -176,7 +185,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_1255459ba4f85a16409_93912437 extends Smarty_Internal_Block
+class Block_1938759bf6f1a110577_42122233 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -217,8 +226,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
              });
         })
         
-
-        /////
    
     <?php echo '</script'; ?>
 >

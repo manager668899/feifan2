@@ -18,6 +18,7 @@ CREATE TABLE tg_goods(
 	pic2 varchar(200) not null DEFAULT '' COMMENT '商品封面图2',
 	classid int(11) NOT NULL,
 	times int(4) NOT NULL,
+	uptimes int(4) NOT NULL COMMENT '修改的时间',
 	status smallint(2) NOT NULL DEFAULT '1',
 	PRIMARY KEY (id),
 	index (name)

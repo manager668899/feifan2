@@ -26,15 +26,18 @@
 			    </li>
 			    <li><a href="user.php?page=1">首页</a></li>
 			        {if $n>$showpage}
-			            {if $page>$pageoffset+1}<li><a href="user.php">...</a></li>{/if}
-			            {if $page>$pageoffset}
+			               {if $page>$pageoffset+1}<li><a href="user.php">...</a></li>{/if}
+			           {if $page>$pageoffset}
 			              {$start=$page-$pageoffset}
+                               
 			              {if $n>$page+$pageoffset}
 			                   {$end=$page+$pageoffset}
 			                {else}
 			                   {$end=$n}
 			                {/if}
+
 			            {/if}
+			            
 			            {else}
 	                          {$star=1}
 	                       {if $n>$showpage}
