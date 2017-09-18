@@ -20,49 +20,37 @@
 			  <ul class="pagination">
 			  <li><a href="">每页显示{$showlist}条</a></li>
 			    <li>
-			      <a href="user.php?page={$page-1}" aria-label="Previous">
-			        <span aria-hidden="true">&laquo;上一页</span>
+			      <a href="user.php?page={$page-$showpage}" aria-label="Previous">
+			        <span aria-hidden="true">上{$showpage}页</span>
 			      </a>
 			    </li>
 			    <li><a href="user.php?page=1">首页</a></li>
-			        {if $n>$showpage}
-			               {if $page>$pageoffset+1}<li><a href="user.php">...</a></li>{/if}
-			           {if $page>$pageoffset}
-			              {$start=$page-$pageoffset}
-                               
-			              {if $n>$page+$pageoffset}
-			                   {$end=$page+$pageoffset}
-			                {else}
-			                   {$end=$n}
-			                {/if}
-
-			            {/if}
-			            
-			            {else}
-	                          {$star=1}
-	                       {if $n>$showpage}
-	                          {$end=$showpage}
-	                       {else}
-	                         {$end=$n}
-	                       {/if} 
-
-	                       {if $page+$pageoffset>$n}
-	                          {$start=$start-($page+$pageoffset-$end)}
-	                       {/if}
-
-			        {/if}
+			    {if $n>$showpage}
+			        {$start=$page}
+			        {$end=$showpage+$page}
+                      {if $page+$showpage>$n}
+                          {$end=$n}   
+                      {/if}
+			        {if $end>$n}
+                         {$end=$n}    
+			        {/if}      
+			       
+			    {/if}
+                  
+                  
 
                 {for $foo=$start to $end}   
                  <li><a href="user.php?page={$foo}">{$foo}</a></li>
                 {/for}
-			        {if $n>$showpage && $n>$page+$pageoffset}<li><a href="user.php">...</a></li>{/if}
 			    <li><a href="user.php?page={$n}">尾页</a></li>
 			    <li>
-			      <a href="user.php?page={$page+1}" aria-label="Next">
-			        <span aria-hidden="true">&raquo;下一页</span>
+			      <a href="user.php?page={$page+$showpage}" aria-label="Next">
+			        <span aria-hidden="true">下{$showpage}页</span>
 			      </a>
 			    </li>
 			     <li><a href="user.php">第{$page}页</a></li>
 			  </ul>
+			        
+			        
 	</nav>
 {/block}
