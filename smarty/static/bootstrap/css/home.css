@@ -31,6 +31,20 @@
 	width: 1195px;
 }
 .shopa img{
-	width: 120px;
-	height: 120px;
+	width: 167px;
+	height: 165px;
+    margin-right: auto ;
+	margin-left: auto ;
+	text-align: center ;
+}
+.shopa p{
+	text-align: center;
+}
+.shopa a{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+.shopa .col-md-2{
+	border: 1px solid;
 }
