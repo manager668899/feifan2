@@ -58,7 +58,21 @@ if($methodType=='GET'){
        
 	}
 	  
-	$styleup=$_POST['styleup'];
+
+     if(!empty($_POST['styleup'])){
+            	$styleup=$_POST['styleup'];//获取到修改后值
+	            $typeid=$_POST['typeid'] ;//获取相应的id号
+	            $count=count($styleup);//得到数组的个数
+              for ($i=0; $i <$count ; $i++) { 
+                   $sql4="update tg_style set stylename='{$styleup[$i]}' where id={$typeid[$i]}"; 
+                   DB::getDB()->query($sql4);
+
+               } 
+
+
+         //die;
+     }
+
 	$content=$_POST['content'];
 	$time=time();
 

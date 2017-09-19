@@ -33,7 +33,7 @@
                  }
         </script>
         {foreach $style as $vv}
-           <input type="text" name="styleup[]" class="aa" value="{$vv['stylename']}" ><br/>
+           <input type="text" name="styleup[]" class="aa" value="{$vv['stylename']}" > <input type="hidden" name="typeid[]" value="{$vv['id']}"><span onclick="delss({$vv['id']})">删除</span><br/>
         {/foreach}
 
         <span>商品封面图<span class="ttt">*</span></span>
@@ -118,7 +118,32 @@
              });
         })
         
-   
+
+
+        function delss(data){
+              $.ajax({
+                  type:'post',
+                  url:'delss.php',
+                  data:{
+                      id:data
+                  },
+                  success:function(data){
+                        var datas=JSON.parse(data);
+                        alert(datas.msg);
+                        //window.location.assign('updateGoods.php?id=');
+                       window.location.assign(window.location.href) ;
+                  }
+
+              });
+        }
+    
+
+    // var host=  window.location.hostname;
+    // var filename=window.location.pathname;
+    // var http=window.location.protocol;
+    // //alert(http+host+filename);
+    // alert(window.location.href);
+
     </script>
    
  

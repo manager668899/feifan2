@@ -24,6 +24,7 @@
 			        <span aria-hidden="true">上{$showpage}页</span>
 			      </a>
 			    </li>
+			    <li><a href="user.php?page={$page-1}">上一页</a></li>
 			    <li><a href="user.php?page=1">首页</a></li>
 			    {if $n>$showpage}
 			        {$start=$page}
@@ -42,7 +43,9 @@
                 {for $foo=$start to $end}   
                  <li><a href="user.php?page={$foo}">{$foo}</a></li>
                 {/for}
-			    <li><a href="user.php?page={$n}">尾页</a></li>
+                <li><a href="user.php?page={$n}">尾页</a></li>
+                <li><a href="user.php?page={$page+1}">下一页</a></li>
+			    
 			    <li>
 			      <a href="user.php?page={$page+$showpage}" aria-label="Next">
 			        <span aria-hidden="true">下{$showpage}页</span>

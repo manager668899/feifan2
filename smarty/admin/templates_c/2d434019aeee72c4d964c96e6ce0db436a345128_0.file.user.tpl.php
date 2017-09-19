@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-18 15:47:13
+/* Smarty version 3.1.30, created on 2017-09-19 10:05:31
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\user.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59bfea81c933b5_46381253',
+  'unifunc' => 'content_59c07b6b602e66_76702809',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2d434019aeee72c4d964c96e6ce0db436a345128' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\user.tpl',
-      1 => 1505749629,
+      1 => 1505786727,
       2 => 'file',
     ),
   ),
@@ -21,18 +21,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59bfea81c933b5_46381253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c07b6b602e66_76702809 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1407459bfea81c933b7_20832632', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3252159c07b6b5fefe0_07792780', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1407459bfea81c933b7_20832632 extends Smarty_Internal_Block
+class Block_3252159c07b6b5fefe0_07792780 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -76,6 +76,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 页</span>
 			      </a>
 			    </li>
+			    <li><a href="user.php?page=<?php echo $_smarty_tpl->tpl_vars['page']->value-1;?>
+">上一页</a></li>
 			    <li><a href="user.php?page=1">首页</a></li>
 			    <?php if ($_smarty_tpl->tpl_vars['n']->value > $_smarty_tpl->tpl_vars['showpage']->value) {?>
 			        <?php $_smarty_tpl->_assignInScope('start', $_smarty_tpl->tpl_vars['page']->value);
@@ -107,8 +109,11 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 }
 ?>
 
-			    <li><a href="user.php?page=<?php echo $_smarty_tpl->tpl_vars['n']->value;?>
+                <li><a href="user.php?page=<?php echo $_smarty_tpl->tpl_vars['n']->value;?>
 ">尾页</a></li>
+                <li><a href="user.php?page=<?php echo $_smarty_tpl->tpl_vars['page']->value+1;?>
+">下一页</a></li>
+			    
 			    <li>
 			      <a href="user.php?page=<?php echo $_smarty_tpl->tpl_vars['page']->value+$_smarty_tpl->tpl_vars['showpage']->value;?>
 " aria-label="Next">

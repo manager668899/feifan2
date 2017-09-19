@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-18 15:00:42
+/* Smarty version 3.1.30, created on 2017-09-19 11:10:23
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\updateGoods.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59bf6f1a110577_47574159',
+  'unifunc' => 'content_59c08a9fb50d41_12230669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bd2ef03dcc5f6686043a6f8f8d6599873f406cec' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\updateGoods.tpl',
-      1 => 1505718038,
+      1 => 1505790620,
       2 => 'file',
     ),
   ),
@@ -21,27 +21,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59bf6f1a110577_47574159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c08a9fb50d41_12230669 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1351859bf6f1a0dd8f9_38853350', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1690559c08a9fb1e0b0_28847842', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2086659bf6f1a10c6f2_72310832', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_345659c08a9fb4cec8_67987232', 'content');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1938759bf6f1a110577_42122233', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3081859c08a9fb50d42_56457139', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_1351859bf6f1a0dd8f9_38853350 extends Smarty_Internal_Block
+class Block_1690559c08a9fb1e0b0_28847842 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_2086659bf6f1a10c6f2_72310832 extends Smarty_Internal_Block
+class Block_345659c08a9fb4cec8_67987232 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -114,7 +114,9 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['vv']->value) {
 ?>
            <input type="text" name="styleup[]" class="aa" value="<?php echo $_smarty_tpl->tpl_vars['vv']->value['stylename'];?>
-" ><br/>
+" > <input type="hidden" name="typeid[]" value="<?php echo $_smarty_tpl->tpl_vars['vv']->value['id'];?>
+"><span onclick="delss(<?php echo $_smarty_tpl->tpl_vars['vv']->value['id'];?>
+)">删除</span><br/>
         <?php
 }
 }
@@ -185,7 +187,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_1938759bf6f1a110577_42122233 extends Smarty_Internal_Block
+class Block_3081859c08a9fb50d42_56457139 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -226,7 +228,32 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
              });
         })
         
-   
+
+
+        function delss(data){
+              $.ajax({
+                  type:'post',
+                  url:'delss.php',
+                  data:{
+                      id:data
+                  },
+                  success:function(data){
+                        var datas=JSON.parse(data);
+                        alert(datas.msg);
+                        //window.location.assign('updateGoods.php?id=');
+                       window.location.assign(window.location.href) ;
+                  }
+
+              });
+        }
+    
+
+    // var host=  window.location.hostname;
+    // var filename=window.location.pathname;
+    // var http=window.location.protocol;
+    // //alert(http+host+filename);
+    // alert(window.location.href);
+
     <?php echo '</script'; ?>
 >
    
