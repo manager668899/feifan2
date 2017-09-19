@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-08 09:57:09
+/* Smarty version 3.1.30, created on 2017-09-19 16:42:25
   from "D:\phpStudy\WWW\feifan2\smarty\web\base\head.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b1f8f55c1702_66868626',
+  'unifunc' => 'content_59c0d871695b02_14734741',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3abdf354e3ec7388fee82c59bba9334ae73b9bd1' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\base\\head.tpl',
-      1 => 1504835821,
+      1 => 1505810217,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59b1f8f55c1702_66868626 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c0d871695b02_14734741 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -47,6 +47,10 @@ static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
  src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
 >
     <![endif]-->
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2243959c0d871682285_59245448', 'head');
+?>
+
   </head>
   <body>
 <div class="container-fluid">
@@ -65,16 +69,23 @@ home/login.php">登录</a></li>
 home/register.php">注册</a></li><?php }?> </a></li>
       </ul>
 
-   <div class="row">
+   
        <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2347159b1f8f55c1706_65088265', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_956059c0d871695b02_58833996', 'content');
 ?>
 
-  </div>
+  
   
 </div><?php }
+/* {block 'head'} */
+class Block_2243959c0d871682285_59245448 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'head'} */
 /* {block 'content'} */
-class Block_2347159b1f8f55c1706_65088265 extends Smarty_Internal_Block
+class Block_956059c0d871695b02_58833996 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

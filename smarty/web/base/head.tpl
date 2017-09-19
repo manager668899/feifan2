@@ -16,6 +16,7 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    {block name='head'}{/block}
   </head>
   <body>
 <div class="container-fluid">
@@ -29,9 +30,9 @@
           <li role="presentation"><a href="{$url}home/register.php">注册</a></li>{/if} </a></li>
       </ul>
 
-   <div class="row">
+   
        {block name='content'}
        {/block}
-  </div>
+  
   
 </div>

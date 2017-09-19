@@ -1,0 +1,43 @@
+.search{
+   
+}
+.searchID{
+	margin-top: 20px;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+#logo{
+	width:200px;
+	height: 100px;
+	background: #BC8F8F;
+	float: left;
+}
+.contentId{
+
+	margin-top: 50px;
+}
+.list li {
+	list-style: none;
+	font-size: 15px;
+	font-family : monospace;
+	padding-top: 15px;
+}
+.leftlist{
+	 background:#EEE9BF;
+	 height:400px;
+}
+.imgId img{
+    width:100%;
+    height: 400px !important;
+}
+.rightlist{
+		 background:#EEE9BF;
+	     height:400px;
+}
+
+.special{
+	background: #FFA500;
+	height: 500px;
+}
