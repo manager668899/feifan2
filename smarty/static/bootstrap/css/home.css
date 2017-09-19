@@ -1,22 +1,7 @@
-.search{
-   
-}
-.searchID{
-	margin-top: 20px;
-	width: 40%;
-	margin-left: auto;
-	margin-right: auto;
 
-}
-#logo{
-	width:200px;
-	height: 100px;
-	background: #BC8F8F;
-	float: left;
-}
 .contentId{
 
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 }
 .list li {
 	list-style: none;
@@ -24,6 +9,7 @@
 	font-family : monospace;
 	padding-top: 15px;
 }
+
 .leftlist{
 	 background:#EEE9BF;
 	 height:400px;
@@ -40,4 +26,11 @@
 .special{
 	background: #FFA500;
 	height: 500px;
+}
+.cccc{
+	width: 1195px;
+}
+.shopa img{
+	width: 120px;
+	height: 120px;
 }
