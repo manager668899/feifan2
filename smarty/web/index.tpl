@@ -96,6 +96,14 @@
              <a href=""><img src="uploade/150528917026203.jpg"></a>
              <p>九阳豆浆机</p>
          </div>
+        <div class="col-md-2">
+             <a href=""><img src="uploade/150528917026203.jpg"></a>
+             <p>九阳豆浆机</p>
+         </div>
+        <div class="col-md-2">
+             <a href=""><img src="uploade/150528917026203.jpg"></a>
+             <p>九阳豆浆机</p>
+         </div>
     </div>
 
 
