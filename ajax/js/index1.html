@@ -11,28 +11,28 @@
     反选<input type="button" id="othercheck" value="反选" /><br />
  
  <div id="div">
-<input type="checkbox" /><br />
-<input type="checkbox" /><br />
-<input type="checkbox" /><br />
-<input type="checkbox" /><br />
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br />
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
-<input type="checkbox" /><br /> 
+        <input class="kk" type="checkbox" value="1" />1<br />
+        <input class="kk" type="checkbox" value="2"  />2<br />
+        <input class="kk" type="checkbox" value="3" />3<br />
+        <input class="kk" type="checkbox" value="4"  />4<br />
+        <input class="kk" type="checkbox" value="5" />5<br /> 
+        <input type="checkbox" />6<br /> 
+        <input type="checkbox" />7<br /> 
+        <input type="checkbox" />8<br /> 
+        <input type="checkbox" />9<br /> 
+        <input type="checkbox" />10<br /> 
+        <input type="checkbox" />11<br /> 
+        <input type="checkbox" />12<br /> 
+        <input type="checkbox" />13<br /> 
+        <input type="checkbox" />14<br /> 
+        <input type="checkbox" />15<br />
+        <input type="checkbox" />16<br /> 
+        <input type="checkbox" />17<br /> 
+        <input type="checkbox" />18<br /> 
+        <input type="checkbox" />19<br /> 
+        <input type="checkbox" />20<br /> 
 </div>
-
+<button onclick="sss()">取值</button>
 <script>
  window.onload=function(){
      var CheckAll=document.getElementById('All');
@@ -63,7 +63,22 @@
                      
                  };
          };
+
  };
+
+       function sss()
+      {   var yyy=document.getElementsByClassName('kk');
+          //alert(yyy.length);
+          var aas=new Array();
+            for (var i = 0; i < yyy.length; i++) {
+                 if(yyy[i].checked){
+                    aas[i]=yyy[i].value;
+                 }
+                  
+            }
+
+            alert(aas);
+      }
  </script>
 </body>
 </html>
