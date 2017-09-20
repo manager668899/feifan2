@@ -1,5 +1,6 @@
 {extends file='base/base.tpl'}
 {block name='content'}
+<div class="container">
        <div class="col-md-4"></div>
     <div class="col-md-4">
     	  <form id='form'>
@@ -20,7 +21,7 @@
        <h4>数据交互中...</h4>
        <img src="../static/timg.gif">
       </div>
-
+</div>
 {/block}
 {block name='js'}
   <script type="text/javascript">

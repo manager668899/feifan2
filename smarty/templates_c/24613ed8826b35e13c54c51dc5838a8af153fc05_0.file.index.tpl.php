@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-19 15:44:27
+/* Smarty version 3.1.30, created on 2017-09-20 10:11:04
   from "D:\phpStudy\WWW\feifan2\smarty\web\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59c13b5bb3bb05_51527549',
+  'unifunc' => 'content_59c1ce385faae2_80652844',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '24613ed8826b35e13c54c51dc5838a8af153fc05' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\index.tpl',
-      1 => 1505835865,
+      1 => 1505873459,
       2 => 'file',
     ),
   ),
@@ -21,17 +21,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59c13b5bb3bb05_51527549 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c1ce385faae2_80652844 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_489959c13b5bb3bb01_43365017', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2631459c1ce385df555_29077110', 'head');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2746859c13b5bb3bb05_07352239', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3164159c1ce385faae3_17168711', 'content');
 ?>
 
 
@@ -42,7 +42,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2746859c13b5bb3bb0
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'head'} */
-class Block_489959c13b5bb3bb01_43365017 extends Smarty_Internal_Block
+class Block_2631459c1ce385df555_29077110 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -53,12 +53,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_2746859c13b5bb3bb05_07352239 extends Smarty_Internal_Block
+class Block_3164159c1ce385faae3_17168711 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
+<div class="container-fluid">
+      <div class='heada row'>
+         <div id='logo'>
+           <img src="static/timg.gif" style="width: 150px;height: 150px;">
+         </div>
+          <form class="input-group searchID" action="http://wwww.baidu.com" method="get">
+                <input type="text" class="form-control search" name="search">
+               <span class="input-group-btn">
+                   <button class="btn btn-default" type="submit">搜索</button>
+               </span>
+          </form>
+      </div> 
+</div>
 
 <div class="container">
     <div class="row contentId">
@@ -126,39 +139,28 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <hr/>
     <div class="row shopa">
+
+      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arrgoods']->value, 'v');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
+?>
           <div class="col-md-2">
-              <a href=""><img src="uploade/150528917026203.jpg"></a>
-              <p>九阳豆浆机</p>
+              <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+home/goodsinfo.php?id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+"><img src="uploade/<?php echo $_smarty_tpl->tpl_vars['v']->value['pic'];?>
+"></a>
+              <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+</p>
 
          </div>
-         <div class="col-md-2">
-              <a href=""><img src="uploade/150528917026203.jpg"></a>
-              <p>九阳豆浆机</p>
-         </div>
-         <div class="col-md-2">
-              <a href=""><img src="uploade/150528917026203.jpg"></a>
-              <p>九阳豆浆机</p>
-         </div>
-         <div class="col-md-2">
-              <a href=""><img src="uploade/150528917026203.jpg"></a>
-              <p>九阳豆浆机</p>
-         </div>
-         <div class="col-md-2">
-             <a href=""><img src="uploade/150528917026203.jpg"></a>
-             <p>九阳豆浆机</p>
-         </div>
-         <div class="col-md-2">
-             <a href=""><img src="uploade/150528917026203.jpg"></a>
-             <p>九阳豆浆机</p>
-         </div>
-        <div class="col-md-2">
-             <a href=""><img src="uploade/150528917026203.jpg"></a>
-             <p>九阳豆浆机</p>
-         </div>
-        <div class="col-md-2">
-             <a href=""><img src="uploade/150528917026203.jpg"></a>
-             <p>九阳豆浆机</p>
-         </div>
+      <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+         
     </div>
 
 

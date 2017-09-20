@@ -41,3 +41,13 @@ CREATE TABLE tg_style(
 select tg_goods.name,tg_class.title from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;
 select * from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;
 select * ,tg_class.id as kk from tg_goods inner join tg_class on tg_goods.classid=tg_class.id;
+
+
+CREATE TABLE tg_buy(
+ id int(4) unsigned not null AUTO_INCREMENT COMMENT'购物车表的id',
+ goodsID smallint(4) unsigned not null COMMENT '商品的id号',
+ goodsmun int(4) unsigned not null COMMENT '购买数量',
+ userid int(4) unsigned not null COMMENT '用户的id号',
+ goodsstyle varchar(200) not null COMMENT '商品的属性',
+ PRIMARY KEY (id)
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;

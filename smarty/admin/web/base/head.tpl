@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>后台首页</title>
 
     <!-- Bootstrap -->
     <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 		  <li role="presentation" class="active"><a href="#">Home</a></li>
 		  <li role="presentation"><a href="#">Profile</a></li>
 		  <li role="presentation"><a href="#">Messages</a></li>
-		  <li role="presentation"><a href="../index.php">前台首页</a></li>
+		  <li role="presentation"><a href="../index.php" target="_blank">前台首页</a></li>
 		</ul>
      	    <div class="row cc">
 			  <div class="col-md-2">

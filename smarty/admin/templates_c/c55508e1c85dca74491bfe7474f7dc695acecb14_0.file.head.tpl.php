@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-14 13:22:56
+/* Smarty version 3.1.30, created on 2017-09-20 11:12:05
   from "D:\phpStudy\WWW\feifan2\smarty\admin\web\base\head.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ba82b05b2d28_81311165',
+  'unifunc' => 'content_59c1dc855bdba7_13639690',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c55508e1c85dca74491bfe7474f7dc695acecb14' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\admin\\web\\base\\head.tpl',
-      1 => 1505395342,
+      1 => 1505877120,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59ba82b05b2d28_81311165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c1dc855bdba7_13639690 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -31,7 +31,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>后台首页</title>
 
     <!-- Bootstrap -->
     <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
  src="../static/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_70959ba82b05b2d28_12282095', "head");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_343659c1dc855b9d23_32528659', "head");
 ?>
 
 
@@ -68,7 +68,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_70959ba82b05b2d28_
 		  <li role="presentation" class="active"><a href="#">Home</a></li>
 		  <li role="presentation"><a href="#">Profile</a></li>
 		  <li role="presentation"><a href="#">Messages</a></li>
-		  <li role="presentation"><a href="../index.php">前台首页</a></li>
+		  <li role="presentation"><a href="../index.php" target="_blank">前台首页</a></li>
 		</ul>
      	    <div class="row cc">
 			  <div class="col-md-2">
@@ -95,7 +95,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_70959ba82b05b2d28_
 			  </div>
 			  <div class="col-md-10">
 			  	    <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_931759ba82b05b2d26_92948906', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2662959c1dc855b9d23_58457701', 'content');
 ?>
 
 			  </div>
@@ -105,14 +105,14 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_931759ba82b05b2d26
 
 <?php }
 /* {block "head"} */
-class Block_70959ba82b05b2d28_12282095 extends Smarty_Internal_Block
+class Block_343659c1dc855b9d23_32528659 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "head"} */
 /* {block 'content'} */
-class Block_931759ba82b05b2d26_92948906 extends Smarty_Internal_Block
+class Block_2662959c1dc855b9d23_58457701 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }

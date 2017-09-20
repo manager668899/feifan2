@@ -16,7 +16,7 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="{$url}static/bootstrap/css/homebase.css">
+    
     {block name='head'}{/block}
   </head>
   <body>
@@ -24,30 +24,18 @@
    <div  class="row">
       <div class="col-md-12">
            <ul class="nav  nav-tabs">
-              <li role="presentation" class="active"><a href="{$url}index.php">首页</a></li>
+              <li role="presentation" class="active"><a href="{$url}index.php" target="_blank">首页</a></li>
 
-              <li role="presentation"><a href="#">购物车</a></li>
+              <li role="presentation"><a href="{$url}home/buy.php">购物车</a></li>
               <li role="presentation"><a href="#">个人中心</a></li>
               <li role="presentation"><a href="#">{if isset($smarty.session.user)}  {$smarty.session.user}<li role="presentation"><a href="{$url}home/unset.php">安全退出</a></li>
-              {else}  <li role="presentation"><a href="{$url}home/login.php">登录</a></li>
-              <li role="presentation"><a href="{$url}home/register.php">注册</a></li>{/if} </a></li>
+              {else}  <li role="presentation"><a href="{$url}home/login.php" target="_blank">登录</a></li>
+              <li role="presentation"><a href="{$url}home/register.php" target="_blank">注册</a></li>{/if} </a></li>
           </ul>
       </div>
    </div>
 </div>
-<div class="container-fluid">
-      <div class='heada row'>
-         <div id='logo'>
-           ddd
-         </div>
-          <form class="input-group searchID" action="http://wwww.baidu.com" method="get">
-                <input type="text" class="form-control search" name="search">
-               <span class="input-group-btn">
-                   <button class="btn btn-default" type="submit">搜索</button>
-               </span>
-          </form>
-      </div> 
-</div>
+
       {block name='content'}
 
        {/block}

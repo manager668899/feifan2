@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-13 09:59:31
+/* Smarty version 3.1.30, created on 2017-09-20 09:58:40
   from "D:\phpStudy\WWW\feifan2\smarty\web\register.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b891035815c4_54154895',
+  'unifunc' => 'content_59c1cb50d630f3_40286897',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f54c45b6ce61d00bd6222c4612cf044bebbb7313' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\register.tpl',
-      1 => 1505267966,
+      1 => 1505872715,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59b891035815c4_54154895 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c1cb50d630f3_40286897 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_466759b8910357d747_89107287', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_146359c1cb50d5f279_18561216', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1237259b891035815c5_85180905', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2031159c1cb50d630f8_07569476', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_466759b8910357d747_89107287 extends Smarty_Internal_Block
+class Block_146359c1cb50d5f279_18561216 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<div class="container">
     <div class="col-md-4"></div>
     <div class="col-md-4">
     	  <form id='form'>
@@ -64,12 +65,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
        <h4>数据交互中...</h4>
        <img src="../static/timg.gif">
       </div>
+</div>
 <?php
 }
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_1237259b891035815c5_85180905 extends Smarty_Internal_Block
+class Block_2031159c1cb50d630f8_07569476 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
