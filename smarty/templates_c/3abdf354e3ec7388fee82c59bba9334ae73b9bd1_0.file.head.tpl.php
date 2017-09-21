@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-20 17:03:09
+/* Smarty version 3.1.30, created on 2017-09-21 08:59:53
   from "D:\phpStudy\WWW\feifan2\smarty\web\base\head.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59c22ecdc21185_19294752',
+  'unifunc' => 'content_59c30f095b0f25_13824659',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3abdf354e3ec7388fee82c59bba9334ae73b9bd1' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\base\\head.tpl',
-      1 => 1505898169,
+      1 => 1505955570,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c22ecdc21185_19294752 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c30f095b0f25_13824659 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -49,7 +49,7 @@ static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <![endif]-->
     
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_902559c22ecdc0d8f9_53024067', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2420659c30f0959d6a7_74854918', 'head');
 ?>
 
   </head>
@@ -68,28 +68,28 @@ home/buy.php">购物车</a></li>
 <li role="presentation"><a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 home/unset.php">安全退出</a></li>
               <?php } else { ?>  <li role="presentation"><a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-home/login.php" target="_blank">登录</a></li>
+home/login.php">登录</a></li>
               <li role="presentation"><a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-home/register.php" target="_blank">注册</a></li><?php }?> </a></li>
+home/register.php">注册</a></li><?php }?> </a></li>
           </ul>
       </div>
    </div>
 </div>
 
       <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2565259c22ecdc21185_52691475', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_957159c30f095b0f25_93168551', 'content');
 ?>
 
 <?php }
 /* {block 'head'} */
-class Block_902559c22ecdc0d8f9_53024067 extends Smarty_Internal_Block
+class Block_2420659c30f0959d6a7_74854918 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'head'} */
 /* {block 'content'} */
-class Block_2565259c22ecdc21185_52691475 extends Smarty_Internal_Block
+class Block_957159c30f095b0f25_93168551 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

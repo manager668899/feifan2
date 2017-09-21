@@ -33,11 +33,13 @@
               	   	   data:$('#form').serialize(),
               	   	   success:function(data){
                            var obj=JSON.parse(data);
-
+                              alert(obj.msg);
                             if(obj.status==1){
+                                $('#show').hide();
                             	  window.history.back();
                             }
-                            alert(obj.msg);
+                            
+
               	   	   },
               	   	   beforeSend:function(){
               	   	   	    var user=$('input[name=user]').val();

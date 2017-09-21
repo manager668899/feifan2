@@ -29,8 +29,8 @@
               <li role="presentation"><a href="{$url}home/buy.php">购物车</a></li>
               <li role="presentation"><a href="#">个人中心</a></li>
               <li role="presentation"><a href="#">{if isset($smarty.session.user)}  {$smarty.session.user}<li role="presentation"><a href="{$url}home/unset.php">安全退出</a></li>
-              {else}  <li role="presentation"><a href="{$url}home/login.php" target="_blank">登录</a></li>
-              <li role="presentation"><a href="{$url}home/register.php" target="_blank">注册</a></li>{/if} </a></li>
+              {else}  <li role="presentation"><a href="{$url}home/login.php">登录</a></li>
+              <li role="presentation"><a href="{$url}home/register.php">注册</a></li>{/if} </a></li>
           </ul>
       </div>
    </div>
