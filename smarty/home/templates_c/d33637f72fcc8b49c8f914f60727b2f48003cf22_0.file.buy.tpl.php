@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-21 18:14:51
+/* Smarty version 3.1.30, created on 2017-09-21 15:23:24
   from "D:\phpStudy\WWW\feifan2\smarty\web\buy.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59c3911b52bf98_36966796',
+  'unifunc' => 'content_59c3d96c9df368_59679661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd33637f72fcc8b49c8f914f60727b2f48003cf22' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\buy.tpl',
-      1 => 1505988887,
+      1 => 1506007401,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59c3911b52bf98_36966796 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c3d96c9df368_59679661 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2565759c3911b524291_89719763', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1935659c3d96c9db4e7_06336805', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2763559c3911b52bf97_56603671', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_319659c3d96c9df361_91072164', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_2565759c3911b524291_89719763 extends Smarty_Internal_Block
+class Block_1935659c3d96c9db4e7_06336805 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -58,10 +58,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['vv']->value) {
 ?>
-		 <tr align="center" class="trss<?php echo $_smarty_tpl->tpl_vars['vv']->value['id'];?>
-">
+		 <tr align="center" class="trssa">
 		  <td><input type="checkbox" name="buyid" value="<?php echo $_smarty_tpl->tpl_vars['vv']->value['id'];?>
-" onclick="nummm()" class="ss" ></td>
+"  class="ss" ></td>
 		  <td class="success"><?php echo $_smarty_tpl->tpl_vars['vv']->value['name'];?>
 </td>
 		  <td class="active"><?php echo $_smarty_tpl->tpl_vars['vv']->value['goodsstyle'];?>
@@ -92,16 +91,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_2763559c3911b52bf97_56603671 extends Smarty_Internal_Block
+class Block_319659c3d96c9df361_91072164 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <?php echo '<script'; ?>
  type="text/javascript">
-
-
-
 /*ajax传递数据修改数量*/
   	   function updete(id,value,price){
               $.ajax({
@@ -179,29 +175,50 @@ function mybuy(){
 }
 
 /*测试代码无效*/
-var info= document.getElementsByClassName('info');
-var trss= document.getElementsByClassName('trss1');
-//console.log(trss[0].children[1].innerHTML);
-for (var i = 0; i < trss.length; i++) {
-      console.log(trss[i].children[6].innerHTML);
+function aaaa (){
+    var info= document.getElementsByClassName('info');
+    var trss= document.getElementsByClassName('trss');
+    //console.log(trss[0].children[1].innerHTML);
+    for (var i = 0; i < trss.length; i++) {
+          console.log(trss[i].children[6].innerHTML);
 
-}
+    }
 
-for (var i = 0; i < info.length; i++) {
-       //console.log(info[i].innerHTML); 
+    for (var i = 0; i < info.length; i++) {
+           //console.log(info[i].innerHTML); 
+    }
+
 }
 
 function nummm(){
-  var sss = document.getElementsByClassName('ss');
- 
-            for (var i = 0; i < sss.length; i++) {
-                 if(sss[i].checked){
-                     alert(sss[i]);
-                 }
+  var vvvs= document.getElementsByClassName('info');
+  var vvv = document.getElementsByClassName('ss'); 
+  var trss= document.getElementsByClassName('trssa');
+  console.log(trss);
+
+            for (var i = 0; i < vvvs.length; i++) {
+                 
+                     console.log(vvvs[i].innerHTML);
+                 
                   
             }
+
+
 }
-  <?php echo '</script'; ?>
+// var vvv = document.getElementsByClassName('ss'); 
+// for (var i = 0; i < vvv.length; i++) {
+//         vvv[i].onclick=function(){
+//             alert(i);
+//         }
+
+// }
+
+var cartTable=document.getElementsByClassName('table');
+//var tr=cartTable.children[1];
+console.log(cartTable.tr);
+
+
+<?php echo '</script'; ?>
 >
 
 <?php

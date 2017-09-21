@@ -13,8 +13,8 @@
    	   	   <td style="width: 10%">合计价格</td>
    	   </tr>
        {foreach $buyArr as $vv}
-		 <tr align="center" class="trss{$vv['id']}">
-		  <td><input type="checkbox" name="buyid" value="{$vv['id']}" onclick="nummm()" class="ss" ></td>
+		 <tr align="center" class="trssa">
+		  <td><input type="checkbox" name="buyid" value="{$vv['id']}"  class="ss" ></td>
 		  <td class="success">{$vv['name']}</td>
 		  <td class="active">{$vv['goodsstyle']}</td>
 		  <td class="success" >{$vv['price']}</td>
@@ -30,9 +30,6 @@
 {/block}
 {block name='js'}
   <script type="text/javascript">
-
-
-
 /*ajax传递数据修改数量*/
   	   function updete(id,value,price){
               $.ajax({
@@ -110,28 +107,45 @@ function mybuy(){
 }
 
 /*测试代码无效*/
-var info= document.getElementsByClassName('info');
-var trss= document.getElementsByClassName('trss1');
-//console.log(trss[0].children[1].innerHTML);
-for (var i = 0; i < trss.length; i++) {
-      console.log(trss[i].children[6].innerHTML);
+function aaaa (){
+    var info= document.getElementsByClassName('info');
+    var trss= document.getElementsByClassName('trss');
+    //console.log(trss[0].children[1].innerHTML);
+    for (var i = 0; i < trss.length; i++) {
+          console.log(trss[i].children[6].innerHTML);
 
-}
+    }
 
-for (var i = 0; i < info.length; i++) {
-       //console.log(info[i].innerHTML); 
+    for (var i = 0; i < info.length; i++) {
+           //console.log(info[i].innerHTML); 
+    }
+
 }
 
 function nummm(){
-  var sss = document.getElementsByClassName('ss');
- 
-            for (var i = 0; i < sss.length; i++) {
-                 if(sss[i].checked){
-                     alert(sss[i]);
-                 }
+  var vvvs= document.getElementsByClassName('info');
+  var vvv = document.getElementsByClassName('ss'); 
+  var trss= document.getElementsByClassName('trssa');
+  console.log(trss);
+
+            for (var i = 0; i < vvvs.length; i++) {
+                 
+                     console.log(vvvs[i].innerHTML);
+                 
                   
             }
+
+
 }
+// var vvv = document.getElementsByClassName('ss'); 
+// for (var i = 0; i < vvv.length; i++) {
+//         vvv[i].onclick=function(){
+//             alert(i);
+//         }
+
+// }
+
+var cartTable=document.getElementsByClassName('table');
 
 
 
