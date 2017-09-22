@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-21 15:23:24
+/* Smarty version 3.1.30, created on 2017-09-22 12:40:06
   from "D:\phpStudy\WWW\feifan2\smarty\web\buy.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59c3d96c9df368_59679661',
+  'unifunc' => 'content_59c494260ea692_80134194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd33637f72fcc8b49c8f914f60727b2f48003cf22' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\feifan2\\smarty\\web\\buy.tpl',
-      1 => 1506007401,
+      1 => 1506055180,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:base/base.tpl' => 1,
   ),
 ),false)) {
-function content_59c3d96c9df368_59679661 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c494260ea692_80134194 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1935659c3d96c9db4e7_06336805', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2586959c494260dac98_95846932', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_319659c3d96c9df361_91072164', 'js');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_665659c494260e6814_62642716', 'js');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:base/base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_1935659c3d96c9db4e7_06336805 extends Smarty_Internal_Block
+class Block_2586959c494260dac98_95846932 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -60,7 +60,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['vv']->value) {
 ?>
 		 <tr align="center" class="trssa">
 		  <td><input type="checkbox" name="buyid" value="<?php echo $_smarty_tpl->tpl_vars['vv']->value['id'];?>
-"  class="ss" ></td>
+"  class="ss" onclick="check(this)"></td>
 		  <td class="success"><?php echo $_smarty_tpl->tpl_vars['vv']->value['name'];?>
 </td>
 		  <td class="active"><?php echo $_smarty_tpl->tpl_vars['vv']->value['goodsstyle'];?>
@@ -91,7 +91,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'content'} */
 /* {block 'js'} */
-class Block_319659c3d96c9df361_91072164 extends Smarty_Internal_Block
+class Block_665659c494260e6814_62642716 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -173,6 +173,33 @@ function mybuy(){
     })
       
 }
+/*点击计算出价格*/
+var total=0;
+function check(n){
+  row=n.parentNode.parentNode.rowIndex;
+  //alert(row);
+  //var price=new Array();
+  var  price=document.getElementsByClassName("info").item(row-1).innerHTML;
+      console.log(price);
+      //alert(typeof(document.getElementsByClassName("info").item(row-1).innerHTML));
+      //alert(document.getElementsByClassName("ss").item(row-1).checked);
+      if(document.getElementsByClassName("ss").item(row-1).checked==true){
+      //  alert();
+       total=total+parseFloat(document.getElementsByClassName("info").item(row-1).innerHTML);
+        $('.sun').html(total);
+      }else{
+       // alert("取消选中");
+        total=0;
+        for(var i=0;i<document.getElementsByClassName("ss").length;i++){
+               if(document.getElementsByClassName("ss").item(i).checked==true){
+          //  alert();
+           total=total+parseFloat(document.getElementsByClassName("info").item(i).innerHTML);
+            $('.sun').html(total);
+          }
+        }
+      }
+}
+
 
 /*测试代码无效*/
 function aaaa (){
@@ -189,22 +216,29 @@ function aaaa (){
     }
 
 }
+nummm();
 
 function nummm(){
   var vvvs= document.getElementsByClassName('info');
-  var vvv = document.getElementsByClassName('ss'); 
+   vvv = document.getElementsByClassName('ss'); 
   var trss= document.getElementsByClassName('trssa');
-  console.log(trss);
+  //console.log(trss);
 
-            for (var i = 0; i < vvvs.length; i++) {
+            for (var i = 0; i < trss.length; i++) {
                  
-                     console.log(vvvs[i].innerHTML);
-                 
+                     // console.log(trss[i].children[6].innerHTML);//得到价格
+                    
                   
             }
 
 
+
 }
+
+
+
+
+
 // var vvv = document.getElementsByClassName('ss'); 
 // for (var i = 0; i < vvv.length; i++) {
 //         vvv[i].onclick=function(){
@@ -214,8 +248,7 @@ function nummm(){
 // }
 
 var cartTable=document.getElementsByClassName('table');
-//var tr=cartTable.children[1];
-console.log(cartTable.tr);
+
 
 
 <?php echo '</script'; ?>

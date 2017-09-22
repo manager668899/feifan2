@@ -14,7 +14,7 @@
    	   </tr>
        {foreach $buyArr as $vv}
 		 <tr align="center" class="trssa">
-		  <td><input type="checkbox" name="buyid" value="{$vv['id']}"  class="ss" ></td>
+		  <td><input type="checkbox" name="buyid" value="{$vv['id']}"  class="ss" onclick="check(this)"></td>
 		  <td class="success">{$vv['name']}</td>
 		  <td class="active">{$vv['goodsstyle']}</td>
 		  <td class="success" >{$vv['price']}</td>
@@ -105,6 +105,33 @@ function mybuy(){
     })
       
 }
+/*点击计算出价格*/
+var total=0;
+function check(n){
+  row=n.parentNode.parentNode.rowIndex;
+  //alert(row);
+  //var price=new Array();
+  var  price=document.getElementsByClassName("info").item(row-1).innerHTML;
+      console.log(price);
+      //alert(typeof(document.getElementsByClassName("info").item(row-1).innerHTML));
+      //alert(document.getElementsByClassName("ss").item(row-1).checked);
+      if(document.getElementsByClassName("ss").item(row-1).checked==true){
+      //  alert();
+       total=total+parseFloat(document.getElementsByClassName("info").item(row-1).innerHTML);
+        $('.sun').html(total);
+      }else{
+       // alert("取消选中");
+        total=0;
+        for(var i=0;i<document.getElementsByClassName("ss").length;i++){
+               if(document.getElementsByClassName("ss").item(i).checked==true){
+          //  alert();
+           total=total+parseFloat(document.getElementsByClassName("info").item(i).innerHTML);
+            $('.sun').html(total);
+          }
+        }
+      }
+}
+
 
 /*测试代码无效*/
 function aaaa (){
@@ -121,22 +148,29 @@ function aaaa (){
     }
 
 }
+nummm();
 
 function nummm(){
   var vvvs= document.getElementsByClassName('info');
-  var vvv = document.getElementsByClassName('ss'); 
+   vvv = document.getElementsByClassName('ss'); 
   var trss= document.getElementsByClassName('trssa');
-  console.log(trss);
+  //console.log(trss);
 
-            for (var i = 0; i < vvvs.length; i++) {
+            for (var i = 0; i < trss.length; i++) {
                  
-                     console.log(vvvs[i].innerHTML);
-                 
+                     // console.log(trss[i].children[6].innerHTML);//得到价格
+                    
                   
             }
 
 
+
 }
+
+
+
+
+
 // var vvv = document.getElementsByClassName('ss'); 
 // for (var i = 0; i < vvv.length; i++) {
 //         vvv[i].onclick=function(){

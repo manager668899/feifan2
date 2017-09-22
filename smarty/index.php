@@ -11,6 +11,11 @@ $smarty->assign('url','');
 $smarty->assign('arrgoods',$arrgoods);
 
 $smarty->display('index.tpl');
+ // $con=$smarty->fetch('index.tpl');
+ // $res=fopen('index.html', 'w');
+ // $int=fwrite($res, $con);
+
+ // fclose($res);
 
 
 
