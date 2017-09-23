@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		
+	</script>
+</head>
+<body>
+
+<h1 id="header">Old Header</h1>
+<h2 class="kk">第一个kk</h2>
+<h2 class="kk">第二个kk</h2>
+
+
+
+<table class="table">
+	 <tr>
+	 	 <td>1111111111</td>
+	 	 <td>222222222</td>
+	 	 <td>3333333333</td>
+	 </tr>
+	 <tr>
+	 	 <td>1111111111</td>
+	 	 <td>222222222</td>
+	 	 <td>3333333333</td>
+	 </tr>
+</table>
+
+<script type="text/javascript">
+	//alert();
+	//alert(document.getElementsByClassName("mm")[0].childNodes[0].nodeName)
+
+	var element=document.getElementById("header");
+	var kk=document.getElementsByClassName('kk');
+ 	var aaa=document.getElementsByClassName('aaa');
+	var table =document.getElementsByClassName('table');
+	//element.innerHTML="New Header";
+	//console.log(element);
+	//console.log(element.innerHTML); 
+	   
+	//console.log(kk.innerHTML);
+	//console.log(kk[0].innerHTML);
+	console.log(kk[0].nextElementSibling.innerHTML);
+	//console.log(kk[1].previousSibling);
+	//console.log(table[0].childNodes.length);
+
+	
+	//console.log(table[0].children[0].children[0].children[0].innerHTML);//成功
+	console.log(table[0].children[0]);
+
+
+
+</script>
+
+
+
+</body>
+</html>
