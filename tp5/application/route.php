@@ -19,6 +19,7 @@ Route::get('demo3/[:ss]','home/Index/demo3');//可选参数
 Route::get('demo4/[:ss]','home/Index/demo4');//可选参数
 Route::get('demo5/[:ss]','home/Index/demo5');//可选参数
 Route::get('demo6','home/Index/demo6');//可选参数
+Route::get('demo7','home/Index/demo7');//可选参数
 return [
     '__pattern__' => [
         'name' => '\w+',

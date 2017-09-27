@@ -2,7 +2,8 @@
 namespace app\home\controller;
 use think\Db;
 use think\Request;
-class Index
+use think\Controller;
+class Index extends Controller
 {
     public function index()
     {
@@ -60,6 +61,12 @@ class Index
         //$arr=Db::table('study1')->insert($data);
         $arr=Db::table('study1')->where('id', 1)->update($data);
         dump($arr);
+    }
+
+    public function demo7()
+    {  
+        //验证码
+        return $this->fetch('demo7');
     }
 
 

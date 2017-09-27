@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">	
+			table{
+				border-collapse: collapse;
+				width: 900px;
+				margin: 100px auto 0 auto;
+			}
+			th,td{
+				width: 150px;
+			}
+			tr:hover{
+				background-color: aquamarine;
+			}
+			img{
+				width: 70px;
+			}
+			input[type='text']{
+				text-align: center;
+			}
+			.cbox,.addbtn,.cutbtn{
+				cursor: pointer;
+			}
+		
+			#footer{
+				width: 898px;
+				height: 35px;
+				line-height: 35px;
+				border: 1px solid black;
+				margin: 0px auto 0 auto;
+				position: relative;
+			}
+			#footer>div{
+				float: left
+			}
+			.footerson1{
+				margin-left: 10px;
+				margin-right: 300px;
+			}
+			.footerson2>span{
+				margin-right: 55px;
+			}
+			.footerson3{
+				position: absolute;
+				left: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" cellspacing="" cellpadding="">
+			<tr>
+				<th>选择</th>
+				<th>商品信息</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>总价</th>
+				<th>删除</th>
+			</tr>
+			<tr align="center">
+				<td><input type="checkbox" class="cbox" checked="checked"/></td>
+				<td><img src="img/1.png" align="center"/>耗子药</td>
+				<td>2888</td>
+				<td>
+					<input type="button" class="cutbtn" value="-" />
+					<input type="text" class="goodsnum" value="1" size="1" readonly="readonly"/>
+					<input type="button" class="addbtn" value="+" />
+				</td>
+				<td>2888</td>
+				<td><a href="#" class="a">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td><input type="checkbox" class="cbox"/></td>
+				<td><img src="img/2.png"  align="center"/>牛板筋</td>
+				<td>5888</td>
+				<td>
+					<input type="button" class="cutbtn" value="-" />
+					<input type="text" class="goodsnum" value="1" size="1" readonly="readonly"/>
+					<input type="button" class="addbtn" value="+" />
+				</td>
+				<td>5888</td>
+				<td><a href="#" class="a">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td><input type="checkbox" class="cbox"/></td>
+				<td><img src="img/3.png"  align="center"/>唐僧肉</td>
+				<td>8888</td>
+				<td>
+					<input type="button" class="cutbtn" value="-" />
+					<input type="text" class="goodsnum" value="1" size="1" readonly="readonly"/>
+					<input type="button" class="addbtn" value="+" />
+				</td>
+				<td>8888</td>
+				<td><a href="#" class="a">删除</a></td>
+			</tr>
+			<tr align="center">
+				<td><input type="checkbox" class="cbox"/></td>
+				<td><img src="img/10.png"  align="center"/>叫花鸡</td>
+				<td>3888</td>
+				<td>
+					<input type="button" class="cutbtn" value="-" />
+					<input type="text" class="goodsnum" value="1" size="1" readonly="readonly"/>
+					<input type="button" class="addbtn" value="+" />
+				</td>
+				<td>3888</td>
+				<td><a href="#" class="a">删除</a></td>
+			</tr>
+		</table>
+		<div id="footer">
+			<div class="footerson1">
+				<input type="radio"  value="" name="aa" />全选
+				<input type="radio"  value="" name="aa" />反选
+			</div>
+			<div class="footerson2">
+				<span>商品总数：</span>
+				<span>商品总价：￥0元</span>
+			</div>
+			<div class="footerson3">
+				<input type="button"  value="结算" id="btn"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//取到选择框集合
+		var cbox = document.getElementsByClassName('cbox');
+		//取到增加数量的btn
+		var addbtn = document.getElementsByClassName('addbtn');
+		//取到减少数量的btn
+		var cutbtn = document.getElementsByClassName('cutbtn');
+		//取到a标签(删除按钮)
+		var a = document.getElementsByClassName('a');
+		var btn = document.getElementById('btn');
+		
+		//当用户点击增加商品数量时
+		for (var i=0;i<addbtn.length;i++) {
+			addbtn[i].onclick = function(){
+			 this.previousElementSibling.previousElementSibling.disabled = false;
+			 var num = parseFloat(this.previousElementSibling.value); 
+			 num++;
+			 this.previousElementSibling.value = num;
+			 total();
+			 sum();
+			}
+		}
+		//当用户点击减少商品数量时
+		for (var i=0;i<cutbtn.length;i++) {
+			cutbtn[i].disabled = true;
+			cutbtn[i].onclick = function(){
+			 var num = parseFloat(this.nextElementSibling.value); 
+			 num--;
+			 this.nextElementSibling.value = num;
+			 if(num == 1){
+			 	this.disabled = true;
+			 }
+			 total();
+			 sum();
+			}
+		}
+		//选择或取消商品时
+		for(var i=0;i<cbox.length;i++){
+			cbox[i].onclick = function(){
+				sum();
+			}
+		}
+		//点击全选时的操作		
+		document.getElementsByClassName('footerson1') [0].children[0].onclick = function(){
+			for(var i=0;i<cbox.length;i++){
+			    cbox[i].checked = true;
+			    sum();
+			}
+		}
+		//点击反选时的操作
+		document.getElementsByClassName('footerson1') [0].children[1].onclick	= function(){
+			for(var i=0;i<cbox.length;i++){
+			   if(cbox[i].checked){
+			   	  cbox[i].checked = false;
+			   }else{
+			   	  cbox[i].checked = true;
+			   }
+			   sum();
+			}
+		}
+		var tr;
+		var father;
+		//点击删除按钮时的操作
+		for (var i=0;i<a.length;i++) {
+			a[i].onclick = function(){
+			father = this.parentElement.parentElement.parentElement;
+			tr = this.parentElement.parentElement;
+			father.removeChild(tr);
+			sum();
+			}
+		}
+		//点击结算按钮时
+		btn.onclick = function(){
+			if(sum() == 0){
+				alert('亲，请至少买一件商品！！！谢谢！');
+			}else{
+				alert('此次消费:'+ sum() +'元');
+			}
+		}
+		//计算出每一类商品的总价
+		function total(){			
+			var goodsnum = document.getElementsByClassName('goodsnum');			
+			for (var i=0;i<goodsnum.length;i++) {
+				var num = parseFloat(goodsnum[i].value);
+				var price =  parseFloat(goodsnum[i].parentElement.previousElementSibling.innerHTML);
+				goodsnum[i].parentElement.nextElementSibling.innerHTML = price*num;
+			}
+		}
+		sum();
+		//将用户所选择的商品做汇总计算(商品总数量 商品总价格)
+		function sum(){
+			var cbox = document.getElementsByClassName('cbox');
+			var arr=[];
+			var sumnum = 0;
+			var sumnum1 = 0;
+			for (var i = 0; i<cbox.length;i++) {
+				if(cbox[i].checked){
+					arr.push(cbox[i]);
+				}
+			}
+			
+			for (var i = 0; i<arr.length;i++) {
+				var num = parseFloat(arr[i].parentElement.parentElement.children[4].innerHTML);				
+				var num1 = parseFloat(arr[i].parentElement.parentElement.children[3].children[1].value);
+			  sumnum += num;
+			  sumnum1 += num1;	
+			 }
+			document.getElementsByClassName('footerson2')[0].children[1].innerHTML = '商品总价：￥'+sumnum+'元';
+			document.getElementsByClassName('footerson2')[0].children[0].innerHTML = '商品总数：'+sumnum1+'个';
+			return sumnum;
+		}
+	</script>
+</html>
