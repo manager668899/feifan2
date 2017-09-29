@@ -68,6 +68,26 @@ class Index extends Controller
         //验证码
         return $this->fetch('demo7');
     }
+    public function demo8()
+    {
+       //$arr=Db::table('study1')->where('id','>',10)->where('sex','男')->select(); 
+        //$arr=Db::table('study1')->where('id','>',10)->where('id','<',20)->whereOr('sex','男')->select(); 
+
+        // $arr = Db::table('study1')->where(function ($query) {
+        //             $query->where('id', 1)->whereor('id', 2);
+        //         })->whereOr(function ($query) {
+        //             $query->where('name', 'like', 'think')->whereOr('name', 'like', 'thinkphp');
+        //         })->select();
+
+        //$arr=Db::getTableInfo('study1');
+
+        //$arr=Db::table('study1')->field('name,age')->select();
+        //$arr=Db::table('study1')->field('id,name,age')->where('id','<',10)->order('age desc,id asc')->select();
+        //$arr=Db::table('study1')->field('id,name,age')->where('id','<',60)->order('id desc,age asc')->limit(4,6)->select();
+        $arr=Db::table('study1')->field('sex,count(*)')->group('sex')->select();
+        $sql="select sex,count(*) from study1 group by sex ";
+        dump($arr);
+    }
 
 
 }
