@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>这里是模板文件</p>
+	
+	<form action="{:url('Demo/url')}" method="post">
+		<p>如果使用了url这个内置函数 则不需要定义路由</p>
+		<input type="text" name="name">
+		<input type="submit" value="go">
+	</form>
+
+<hr/>
+	<form action="demoa2" method="post">
+		<input type="text" name="name">
+		<input type="submit" value="go">
+	</form>
+	<a href=""> demo/{$aaa} </a>
+	{$aaa}
+	{$arr[0]}
+
+	{foreach $arr as $vv}
+	   {$vv}
+	{/foreach}
+
+
+	{:sssa()}
+
+
+</body>
+</html>

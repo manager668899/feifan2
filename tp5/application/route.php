@@ -21,6 +21,19 @@ Route::get('demo5/[:ss]','home/Index/demo5');//可选参数
 Route::get('demo6','home/Index/demo6');//可选参数
 Route::get('demo7','home/Index/demo7');//可选参数
 Route::get('demo8','home/Index/demo8');
+
+Route::get('demoa1','home/Demo/demo1');
+Route::post('demoa2','home/Demo/demo2');
+Route::get('demoa3','home/Demo/demo3');
+
+
+Route::get('demob1','home/Demo2/aaa');
+Route::get('demob2','home/Demo2/bbb');
+Route::post('ccc/[:id]','home/Demo2/ccc');
+Route::get('ddd','home/Demo2/ddd');
+
+
+
 return [
     '__pattern__' => [
         'name' => '\w+',

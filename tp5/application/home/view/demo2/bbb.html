@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bbb控制器</title>
+   <link rel="stylesheet" type="text/css" href="__STATIC__">
+</head>
+<body>
+	{$aaaa}
+{php} echo '<hr/>' ;{/php}
+
+	{foreach $data as $vv}
+	     {$vv['name']}
+	{/foreach}
+
+	<form action="ccc/jj" method="post"> 
+		 <input type="text" name="name">
+		 <input type="text" name="age">
+		 <input type="submit" value="提交" >
+	</form>
+<p>模板中的替换</p>
+__STATIC__
+<hr/>
+__ROOT__
+<hr/>
+__JS__
+<hr/>
+__CSS__
+
+{volist name="data" id='vo'}
+    <p>姓名是: {$vo['name']} 年龄是: {$vo['age']}</p>
+{/volist}
+{if condition="$id==1"}
+      <p>成功</p>
+    {else/}
+      <p>失败</p>
+{/if}
+
+
+{switch name="$id" }
+    {case value="1" break="0或1"}输出内容1{/case}
+    {case value="2"}输出内容2{/case}
+    {default /}默认情况
+{/switch}
+</body>
+</html>
