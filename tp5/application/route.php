@@ -31,6 +31,7 @@ Route::get('demob1','home/Demo2/aaa');
 Route::get('demob2','home/Demo2/bbb');
 Route::post('ccc/[:id]','home/Demo2/ccc');
 Route::get('ddd','home/Demo2/ddd');
+Route::get('eee','home/Demo2/eee');
 
 
 

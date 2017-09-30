@@ -3,7 +3,8 @@ namespace app\home\controller;
 use think\View;
 use think\Db;
 use think\Request;
-class Demo2{
+use think\Controller;
+class Demo2 {
 
 
 
@@ -36,6 +37,30 @@ class Demo2{
 		 $view=new View();
 
 		 return $view->fetch('ddd');
+	}
+
+	public function eee()
+	{
+
+	    $arr=['aaa'=>'AAAA','bbb'=>'BBBB','cccc'=>'CCCC','ddddd'=>'DDDDDDDDD'];
+	    //echo json_encode($arr);
+	    //$this->redirect('Demo2/fff');  //页面重定向  //$this 必须继承Controller
+	    //$this->success('成功了','Demo2/fff');
+	    //$this->error('失败了正在回退到上一个页面');
+        // redirect('http://www.baidu.com');
+        header('Location:aaa'); // 原生写法 自由发挥
+
+        //return redirect('rrr');//参数是方法的名字、注意 不能定义路由
+	}
+
+	public function fff()
+	{
+		echo '跳转的地址';
+	}
+
+	public function _empty()
+	{
+		echo '方法不存在';
 	}
 
 
