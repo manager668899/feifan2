@@ -62,6 +62,28 @@ class Demo2 {
 	{
 		echo '方法不存在';
 	}
+	public function ggg()
+	{  
+	
+
+
+		return view();
+	}
+	public function hhh(Request $request)
+	{   
+		$data=$request->param();
+		//var_dump($data);
+
+
+			//$captcha="dddd";
+		 if(!captcha_check($data['yanzheng'])){
+			    echo '失败';
+			}else{
+				echo '验证码成功';
+			};
+
+	}
+
 
 
 }
