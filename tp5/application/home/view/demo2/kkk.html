@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fenye</title>
+</head>
+<body>
+	{foreach $res as $vv}
+	  {$vv['id']}
+	  {$vv['name']}
+	  
+	{/foreach}
+
+
+{$res->render()}
+
+
+
+<hr/>
+{$page}
+
+<style type="text/css">
+	 .pagination{
+	 	list-style: none;
+	
+	 }
+	.pagination li{
+	 	float: left;
+	 	margin-left: 20px;
+	 	font-size: 25px;
+	 }
+
+</style>
+</body>
+</html>

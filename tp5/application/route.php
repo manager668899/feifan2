@@ -34,6 +34,14 @@ Route::get('ddd','home/Demo2/ddd');
 Route::get('eee','home/Demo2/eee');
 Route::get('ggg','home/Demo2/ggg');
 Route::get('hhh','home/Demo2/hhh');
+Route::get('iii','home/Demo2/iii');
+Route::get('jjj','home/Demo2/jjj');
+Route::get('kkk','home/Demo2/kkk');
+Route::get('lll','home/Demo2/lll');
+Route::post('mmm','home/Demo2/mmm');
+Route::get('nnn','home/Demo2/nnn');
+Route::get('ooo','home/Demo2/ooo');
+Route::get('ppp','home/Demo2/ppp');
 
 
 return [
