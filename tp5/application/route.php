@@ -43,7 +43,9 @@ Route::get('nnn','home/Demo2/nnn');
 Route::get('ooo','home/Demo2/ooo');
 Route::get('ppp','home/Demo2/ppp');
 
-
+/*admin模块*/
+Route::any('login','Admin/Index/login');
+Route::any('index','Admin/Index/index');
 return [
     '__pattern__' => [
         'name' => '\w+',

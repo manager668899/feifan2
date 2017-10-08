@@ -1,0 +1,20 @@
+body{
+	background: url('../img/timg1.jpg');
+	background-size: 100% 100%;
+	height: 980px;
+}
+.container{
+	padding-top: 150px;
+	
+}
+
+.cont{
+
+	width: 450px;
+	margin:0 auto;
+	text-align: center;
+
+}
+.sss{
+	/*border:solid 2px #FF0000 !important;*/
+}
