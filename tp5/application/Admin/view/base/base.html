@@ -5,6 +5,7 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/base.css">
   {block name='style'}{/block}
 	<script type="text/javascript" src="__STATIC__/js/jquery-3.2.1.js" ></script>
 	<script type="text/javascript" src="__STATIC__/js/bootstrap.js" ></script>
@@ -12,17 +13,40 @@
 <body>
 <div class="container header">
 	<ul class="nav nav-pills">
-	  <li role="presentation" class="active"><a href="#">Home</a></li>
-	  <li role="presentation"><a href="#">登录</a></li>
-	  <li role="presentation"><a href="#">注册</a></li>
+	  <li role="presentation" class="active"><a href="index">后台首页</a></li>
+	  <li role="presentation"><a href="#"></a></li>
+	  <li role="presentation"><a href="#"></a></li>
 	</ul> 
 </div>
 
-{block name='content'}{/block}
+<div class="container">
+	 <div class="row">
+	 	  <div class="col-md-2">
+	 	  	  <ul class='ul list-group'>
+	 	  	  	 <li><a href="article">文章管理</a></li>
+	 	  	  	 <li><a href="user"> 会员管理</a> </li>
+	 	  	  	 <li><a href="order">订单管理</a> </li>
+	 	  	  	 <li> <a href="auth">权限管理</a> </li>
+	 	  	  	 <li>系统设置</li>
+	 	  	  	 <li>a</li>
+	 	  	  	 <li>a</li>
+	 	  	  	 <li>a</li>
+	 	  	  	 <li>a</li>
+	 	  	  	 <li>a</li>
+	 	  	  </ul>
+
+	 	  </div> 
+	 	  <div class="col-md-10">
+	 	      {block name='content'}{/block}
+	 	  </div> 
+	 </div>
+	
+</div>
+
 
 <div class="container footer">
 	 <div class="row">
-	 	  <div class="col-md-12">12ge</div> 
+	 	  <div class="col-md-12"></div> 
 	 </div>
 	
 </div>

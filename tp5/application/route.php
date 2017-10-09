@@ -46,6 +46,16 @@ Route::get('ppp','home/Demo2/ppp');
 /*admin模块*/
 Route::any('login','Admin/Index/login');
 Route::any('index','Admin/Index/index');
+//文章管理
+Route::get('article','Admin/Article/lista');
+
+Route::get('user','Admin/User/vip');
+
+Route::get('order','Admin/Order/oms');
+
+Route::get('auth','Admin/Auth/limits');
+Route::get('sel','Admin/Auth/sel');
+Route::get('role','Admin/Auth/role');
 return [
     '__pattern__' => [
         'name' => '\w+',

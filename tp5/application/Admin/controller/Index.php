@@ -7,7 +7,7 @@ class Index
 {
     public function index()
     {
-       echo 99;
+       return view();
     }
     public function login(Request $request)
     {  
@@ -38,8 +38,15 @@ class Index
                  return json_encode($error); 
 
              }else{
-                
-                 return json_encode(['status'=>1]);
+                  //到数据库查询出来 和输入的数据最对比
+                  $obj=model('Login');
+                  $bool=$obj->yy($data);
+                  if($bool){
+                    return json_encode(['status'=>1]);
+                  }else{
+                    return json_encode(['status'=>0]);
+                  }
+                 
              }
 
         	return;
