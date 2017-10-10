@@ -56,6 +56,17 @@ Route::get('order','Admin/Order/oms');
 Route::get('auth','Admin/Auth/limits');
 Route::get('sel','Admin/Auth/sel');
 Route::get('role','Admin/Auth/role');
+Route::get('urlget','Admin/Auth/urlget');
+/*权限测试*/
+Route::get('system','Admin/System/aaa');
+Route::get('listsa','Admin/System/aaa');
+Route::get('add','Admin/System/aaa');
+Route::get('updete','Admin/System/aaa');
+Route::get('delete','Admin/System/aaa');
+Route::get('deleteall','Admin/System/aaa');
+Route::get('set','Admin/System/aaa');
+
+
 return [
     '__pattern__' => [
         'name' => '\w+',

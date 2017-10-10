@@ -3,6 +3,7 @@ CREATE TABLE `tg_user` (
   `user` varchar(30) not null DEFAULT '' COMMENT '用户名',
   `pwd` varchar(32) NOT NULL DEFAULT '' COMMENT '密码',
   `create_time` int(4) DEFAULT NULL,
+  `userroleid` smallint(6) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user` (`user`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

@@ -2,6 +2,7 @@
 namespace app\Admin\model;
 use think\Model;
 use think\Db;
+use think\Session;
 class Login extends Model
 {
 	 public function yy($arr='')
@@ -13,6 +14,9 @@ class Login extends Model
         //将查询出来的数据做比较 先判断用户名是否存在（如果存在判断密码）否则返回假
 	 	if($array){
 	 		if($array['pwd']==md5($pwd)){
+	 		  Session::set('UserRoleId',$array['userroleid']); 
+	 		  Session::set('UserId',$array['id']); 
+	 		   Session::set('UserName',$array['user']); 
                 return true;
 	 		}else{
 	 			return false;
