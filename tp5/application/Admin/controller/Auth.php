@@ -69,6 +69,8 @@ public function yanzheng($order)
            echo '有权限';
 		}else{
 		   echo '没有权限';
+		   exit();
+		   return false;
 		}
 	}
 

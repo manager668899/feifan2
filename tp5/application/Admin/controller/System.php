@@ -9,6 +9,10 @@ class System  extends Auth
 
     	echo 'aaa';
     }
+    public function listAuth()
+    {
+    	return view();
+    }
 
 
 }

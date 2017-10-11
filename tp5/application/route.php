@@ -53,8 +53,7 @@ Route::get('user','Admin/User/vip');
 
 Route::get('order','Admin/Order/oms');
 
-Route::get('auth','Admin/Auth/limits');
-Route::get('sel','Admin/Auth/sel');
+
 Route::get('role','Admin/Auth/role');
 Route::get('urlget','Admin/Auth/urlget');
 /*权限测试*/
@@ -66,6 +65,9 @@ Route::get('delete','Admin/System/aaa');
 Route::get('deleteall','Admin/System/aaa');
 Route::get('set','Admin/System/aaa');
 
+Route::get('auth','Admin/System/limits');
+Route::get('sel','Admin/System/sel');
+Route::get('listAuth','Admin/System/listAuth');
 
 
 Route::get('vip2','Admin/User/vip2');
