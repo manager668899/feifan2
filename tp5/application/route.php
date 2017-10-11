@@ -67,6 +67,10 @@ Route::get('deleteall','Admin/System/aaa');
 Route::get('set','Admin/System/aaa');
 
 
+
+Route::get('vip2','Admin/User/vip2');
+Route::any('yyy','Admin/User/yyy');
+
 return [
     '__pattern__' => [
         'name' => '\w+',
