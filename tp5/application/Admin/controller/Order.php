@@ -1,6 +1,7 @@
 <?php
 namespace app\Admin\controller;
-class Order
+use app\Admin\controller\Auth;
+class Order extends Auth
 {
 	public function oms()
 	{

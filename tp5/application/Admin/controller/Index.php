@@ -5,10 +5,7 @@ use think\Validate;
 
 class Index
 {
-    public function index()
-    {
-       return view();
-    }
+
     public function login(Request $request)
     {  
         if($request->isPost())

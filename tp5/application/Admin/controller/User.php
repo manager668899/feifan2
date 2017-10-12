@@ -1,6 +1,7 @@
 <?php
 namespace app\Admin\controller;
-class User 
+use app\Admin\controller\Auth;
+class User extends Auth
 {
 	public function vip()
 	{

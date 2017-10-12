@@ -1,0 +1,17 @@
+{extend name='base/base'}
+{block name='content'}
+    <table>
+    	<tr>
+    		<td width="10%">用户名id</td>
+    		<td width="30%">用户名</td>
+    		<td width="30%">角色</td>
+    	</tr>
+    	{foreach $arr as $vv}
+	    	 <tr>
+	    		<td width="10%">{$vv['id']}</td>
+	    		<td width="30%">{$vv['user']}</td>
+	    		<td width="30%">{$vv['role_title']}</td>
+	    	</tr> 
+    	{/foreach}
+    </table>
+{/block}

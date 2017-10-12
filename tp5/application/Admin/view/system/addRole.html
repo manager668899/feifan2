@@ -1,0 +1,16 @@
+{extend name='base/base'}
+{block name='content'}
+
+<form action="receive" method="post">
+	<input type="text" name="role_tite">角色名称<br/>
+    {foreach $arr as $vv}
+        {if empty($vv['title']) }         
+          <input type="hidden" name="id[{$vv['id']}]" value="{$vv['id']}">
+          {else}
+         <input type="checkbox" name="yy[{$vv['id']}]" value="{$vv['id']}">{$vv['title']}
+        {/if}
+    {/foreach}
+    <br/>
+    <input type="submit" value="增加角色">
+</form>
+{/block}

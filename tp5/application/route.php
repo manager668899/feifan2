@@ -45,7 +45,7 @@ Route::get('ppp','home/Demo2/ppp');
 
 /*admin模块*/
 Route::any('login','Admin/Index/login');
-Route::any('index','Admin/Index/index');
+Route::any('index','Admin/System/index');
 //文章管理
 Route::get('article','Admin/Article/lista');
 
@@ -67,8 +67,11 @@ Route::get('set','Admin/System/aaa');
 
 Route::get('auth','Admin/System/limits');
 Route::get('sel','Admin/System/sel');
+/*设置权限*/
 Route::get('listAuth','Admin/System/listAuth');
-
+Route::get('addRole','Admin/System/addRole');
+Route::post('receive','Admin/System/receive');
+Route::get('userRole','Admin/System/userRole');
 
 Route::get('vip2','Admin/User/vip2');
 Route::any('yyy','Admin/User/yyy');
