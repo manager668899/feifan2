@@ -37,5 +37,8 @@ Route::get('usera/profile', function () {
 Route::get('userb/profile', 'UserController@showProfile')->name('profilea');//路由跳转到控制器
 Route::get('aaa', 'User@aaa');
 Route::get('bbb', 'User@bbb');
+Route::get('ccc/{id?}', 'User@ccc');
+Route::get('ddd/{id?}', 'User@ddd');
+Route::get('sss', 'Admin\Index@sss');
 
 
