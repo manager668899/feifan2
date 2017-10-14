@@ -39,6 +39,12 @@ Route::get('aaa', 'User@aaa');
 Route::get('bbb', 'User@bbb');
 Route::get('ccc/{id?}', 'User@ccc');
 Route::get('ddd/{id?}', 'User@ddd');
+Route::get('eee', 'User@eee');
+Route::post('fff', 'User@fff');
+
+
+
+
 Route::get('sss', 'Admin\Index@sss');
 
 

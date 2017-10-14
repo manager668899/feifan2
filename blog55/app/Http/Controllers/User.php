@@ -49,5 +49,15 @@ class User extends Controller
        var_dump($data);
        echo $id;
     }
+    public function eee()
+    {
+        //echo 'eee';
+        return view('eee');
+    }
+    public function fff(Request $request)
+    {
+        $data=$request->all();
+       var_dump($data); 
+    }
 
 }
