@@ -48,3 +48,10 @@ Route::post('fff', 'User@fff');
 Route::get('sss', 'Admin\Index@sss');
 
 
+Route::get('aaaa', 'Demo@aaaa');
+Route::get('bbbb/{id?}', 'Demo@bbbb');
+Route::get('aaai', 'Home\Index@aaai');
+Route::get('ffff', 'Demo@ffff')->middleware('CheckAge');
+Route::get('home', 'Demo@gggg');
+
+
