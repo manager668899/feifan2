@@ -55,9 +55,14 @@ class User extends Controller
         return view('eee');
     }
     public function fff(Request $request)
-    {
+    { 
+
+        $this->validate($request, [
+        'name' => 'required|max:2',
+        'pwd' => 'required'],['name.required'=>'uuuuuuu','name.max'=>'yyyyy']);
+       
         $data=$request->all();
-       var_dump($data); 
+        var_dump($data); 
     }
 
 }

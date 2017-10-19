@@ -39,6 +39,7 @@ Route::get('aaa', 'User@aaa');
 Route::get('bbb', 'User@bbb');
 Route::get('ccc/{id?}', 'User@ccc');
 Route::get('ddd/{id?}', 'User@ddd');
+/*表单验证*/
 Route::get('eee', 'User@eee');
 Route::post('fff', 'User@fff');
 
@@ -64,4 +65,5 @@ Route::get('index', function (){
 });
 
 Route::get('jjjj4', 'Demo@jjjj4');
-
+Route::get('jjjj5', 'Demo@jjjj5');
+Route::get('jjjj6', 'Demo@jjjj6');

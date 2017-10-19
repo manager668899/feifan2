@@ -92,12 +92,25 @@ class Demo extends Controller
     {   
         $dd=DB::select('select * from study1');
         //var_dump($dd);
-        foreach ($dd as $key => $value) {
-            echo $value->name;
-        }
-        
+        // foreach ($dd as $key => $value) {
+        //     echo $value->name;
+        // }
+
         $arr=['a'=>'A','b'=>'B'];
-        return view('demo1',['aa'=>'AAA','data'=>$arr]);
+        return view('demo1',['aa'=>'AAA','data'=>$arr,'dd'=>$dd]);
+    }
+    public function jjjj5(Request $request)
+    {
+        session(['key' => 'zhangsanfeng']);
+        $request->session()->put('key1', 'value1');
+    }
+    public function jjjj6(Request $request)
+    {
+        $data=$request->session()->all();
+        var_dump($data);
+        $value = $request->session()->get('key');
+        var_dump($value);
+
     }
 
 

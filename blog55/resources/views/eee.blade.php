@@ -11,5 +11,18 @@
 		<input type="text" name="pwd">
 		<input type="submit"  value="go">
 	</form>
+
+	@if (count($errors) > 0)
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div>
+       {{$errors->first('name')}};
+   @endif
+
+
 </body>
 </html>
