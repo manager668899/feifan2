@@ -24,7 +24,7 @@ Route::get('foo', function () {
 Route::get('foo1', function () {
     return 'Hello Worldttttt';
 });
-Route::redirect('/', '/foo', 301); //路由重定向
+//Route::redirect('/', '/foo', 301); //路由重定向
 
 Route::get('user/{id?}', function ($id='8888') {
     return 'User '.$id;
@@ -53,5 +53,15 @@ Route::get('bbbb/{id?}', 'Demo@bbbb');
 Route::get('aaai', 'Home\Index@aaai');
 Route::get('ffff', 'Demo@ffff')->middleware('CheckAge');
 Route::get('home', 'Demo@gggg');
+Route::get('hhhh', 'Demo@hhhh');
+Route::any('iiii', 'Demo@iiii');
+Route::get('jjjj', 'Demo@jjjj')->name('jjjj');
+Route::get('jjjj2', 'Demo@jjjj2');
+Route::get('jjjj3', 'Demo@jjjj3');
 
+Route::get('index', function (){
+	 return view('welcome');
+});
+
+Route::get('jjjj4', 'Demo@jjjj4');
 
