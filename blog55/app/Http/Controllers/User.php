@@ -83,8 +83,9 @@ class User extends Controller
                 $request->flashOnly(['name', 'pwd']);
                 $errors=$vv->errors();
                 echo $errors->first('name');
-                
-                return redirect('eee')->withInput()->with('status', $errors);
+            //以下两个返回值都是可以的 在模板页面显示的位置不同
+                //return redirect('eee')->withInput()->with('status', $errors);
+                return redirect('eee')->withErrors($vv, 'login')->withInput();
 
 
         }

@@ -29,5 +29,8 @@
     </div>
 @endif
 
+<p>错误提示</p>
+{{ $errors->login->first('name') }}
+
 </body>
 </html>
