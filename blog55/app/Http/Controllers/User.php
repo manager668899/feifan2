@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Validator;
 
 class User extends Controller
 {
@@ -63,6 +64,23 @@ class User extends Controller
        
         $data=$request->all();
         var_dump($data); 
+    }
+    public function fffa(Request $request)
+    {  
+        $vv=Validator::make($request->all(), [
+        'name' => 'required|max:2',
+        'pwd' => 'required'],
+        ['name.required'=>'uuuuuuu','name.max'=>'yyyyy']);
+
+        var_dump(!$vv->fails()); 
+        if(!$vv->fails()){
+            echo '验证通过';
+        }else{
+            echo '验证失败';
+            $errors=$vv->errors();
+            echo $errors->first('name');
+        }
+
     }
 
 }

@@ -42,6 +42,7 @@ Route::get('ddd/{id?}', 'User@ddd');
 /*表单验证*/
 Route::get('eee', 'User@eee');
 Route::post('fff', 'User@fff');
+Route::post('fffa', 'User@fffa');
 
 
 
