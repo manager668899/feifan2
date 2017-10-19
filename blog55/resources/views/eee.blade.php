@@ -22,14 +22,14 @@
       </div>
        {{$errors->first('name')}}
    @endif
- 
+
 @if (session('status'))
     <div class="alert alert-success">
         {{ session('status')->first('name') }}
     </div>
 @endif
-
-<p>错误提示</p>
+<p>上面的错误是用的重定向闪存session</p>
+<p>以下的错误是使用的命名错误包</p>
 {{ $errors->login->first('name') }}
 
 </body>

@@ -55,6 +55,7 @@ class User extends Controller
         //echo 'eee';
         return view('eee');
     }
+    /*第一种验证方法*/
     public function fff(Request $request)
     {  
    
@@ -66,6 +67,7 @@ class User extends Controller
         $data=$request->all();
         var_dump($data); 
     }
+    /*第二种验证方法*/
     public function fffa(Request $request)
     {  
         
@@ -83,7 +85,7 @@ class User extends Controller
                 $request->flashOnly(['name', 'pwd']);
                 $errors=$vv->errors();
                 echo $errors->first('name');
-            //以下两个返回值都是可以的 在模板页面显示的位置不同
+                //以下两个返回值都是可以的 在模板页面显示的位置不同
                 //return redirect('eee')->withInput()->with('status', $errors);
                 return redirect('eee')->withErrors($vv, 'login')->withInput();
 
