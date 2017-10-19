@@ -7,8 +7,8 @@
 <body>
 	<form action="{{url('fffa')}}" method="post">
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
-		<input type="text" name="name">
-		<input type="text" name="pwd">
+		<input type="text" name="name" value="{{ old('name') }}">
+		<input type="text" name="pwd" value="{{ old('pwd') }}">
 		<input type="submit"  value="go">
 	</form>
 
@@ -20,9 +20,14 @@
             @endforeach
         </ul>
       </div>
-       {{$errors->first('name')}};
+       {{$errors->first('name')}}
    @endif
-
+ 
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status')->first('name') }}
+    </div>
+@endif
 
 </body>
 </html>

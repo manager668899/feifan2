@@ -56,17 +56,20 @@ class User extends Controller
         return view('eee');
     }
     public function fff(Request $request)
-    { 
+    {  
+   
 
         $this->validate($request, [
         'name' => 'required|max:2',
         'pwd' => 'required'],['name.required'=>'uuuuuuu','name.max'=>'yyyyy']);
-       
+        
         $data=$request->all();
         var_dump($data); 
     }
     public function fffa(Request $request)
     {  
+        
+
         $vv=Validator::make($request->all(), [
         'name' => 'required|max:2',
         'pwd' => 'required'],
@@ -77,8 +80,13 @@ class User extends Controller
             echo '验证通过';
         }else{
             echo '验证失败';
-            $errors=$vv->errors();
-            echo $errors->first('name');
+                $request->flashOnly(['name', 'pwd']);
+                $errors=$vv->errors();
+                echo $errors->first('name');
+                
+                return redirect('eee')->withInput()->with('status', $errors);
+
+
         }
 
     }
