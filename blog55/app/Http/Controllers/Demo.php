@@ -113,5 +113,138 @@ class Demo extends Controller
 
     }
 
+    public function jjjj7()
+    {
+        // $obj=DB::select('select * from study1');
+        // ///var_dump($obj);
+        // foreach ($obj as $key => $value) {
+        //      echo  $value->name;
+        //      echo $value->age;
+        //      echo $value->class;
+        // }
+
+        //DB::insert("insert into study1 (name)value('uuuuu')");
+
+        //$dd=DB::insert("insert into study1 (name)value(?)",['ddddddd']);
+        //$dd=DB::update('update study1 set name =? where id=?',['yyyy',107]);
+        //$dd=DB::delete('delete from study1 where id=?',[106]);
+        $dd=DB::delete('delete from study1 where id=?',[104]);
+        var_dump($dd);
+
+
+    }
+    public function jjjj8()
+    {
+        //$obj=DB::table('study1')->get();
+        //dd($obj);
+        echo '<pre>';
+        //var_dump($obj);
+
+        // foreach ($obj as $key => $value) {
+        //     echo $value->name;
+        // }
+
+       // $obj=DB::table('study1')->where('name','你好')->first();
+       // $obj=DB::table('study1')->where('name','张三')->value('class');
+
+        //$obj=DB::table('study1')->pluck('class');
+/*       $obj=DB::table('study1')->orderBy('id')->chunk(10,function ($pp){
+             foreach ($pp as $key => $value) {
+                 var_dump($value);
+                 return;
+             }
+       });
+
+       var_dump($obj);*/
+
+      //$b=DB::table('study1')->count();
+       //$b=DB::table('study1')->max('id');
+       //$b=DB::table('study1')->min('id');
+       //$b=DB::table('study1')->avg('age');
+       //$b=DB::table('study1')->sum('age');
+       //$b = DB::table('study1')->select('name', 'class as user_class','age','id')->get();
+       //$b=DB::table('study1')->select('name')->distinct()->get();
+       $query = DB::table('study1')->select('name');
+
+      $b= $query->addSelect('age')->get();
+      var_dump($b);
+
+    }
+    public function jjjj9()
+    { 
+        echo '<pre>';
+        $users = DB::table('study1')
+                     ->select(DB::raw('count(*) as user_count, class'))
+                     ->groupBy('class')
+                     ->get();
+        var_dump($users);
+    }
+    public function jjjj10()
+    {  echo '<pre>';
+        $obj=DB::table('study1')->join('study','study1.id','=','study.id')->select('study1.id','study.xingming')->get();
+        var_dump($obj);
+    }
+    public function jjjj11()
+    { 
+        echo '<pre>';
+        $users = DB::table('study1')
+            ->crossJoin('study')
+            ->get();
+        var_dump($users);
+    }
+    public function jjjj12()
+    {   
+        echo '<pre>';
+        //$obj=DB::table('study1')->where('name','=','张三')->get();
+        //$obj=DB::table('study1')->where('age','!=',18)->get();
+        //$obj=DB::table('study1')->where('class','like','%足%')->get();
+        //$obj=DB::table('study1')->where('id','<',10)->where('class','like','%班')->get();
+
+        //$pp=[['id','<',10],['class','like','%班']];
+        //$obj=DB::table('study1')->where($pp)->get();
+
+        //$obj=DB::table('study1')->where('id','>',10)->orWhere('name','=','张三')->get();
+        //$obj = DB::table('study1')->whereBetween('id', [10, 15])->get();
+        //$obj= DB::table('study1')->whereNotBetween('id', [10, 15])->get();
+        //$obj=DB::table('study1')->whereIn('id',[1,2,3])->get();
+        $obj=DB::table('study1')->whereNotIn('id',[1,2,3])->get();
+        var_dump($obj);
+        //return $obj;
+    }
+    public function jjjj13()
+    {   
+        $data=['name'=>'AAAAA','age'=>18,'class'=>'php'];
+        $dataAll=[
+            ['name'=>'AAAAAQ','age'=>15,'class'=>'phpA'],
+            ['name'=>'AAAAAS','age'=>19,'class'=>'phpB']
+        ];
+
+        //$c=DB::table('study1')->insert($dataAll);
+        //var_dump($c);
+        $id = DB::table('study1')->insertGetId($data);
+
+        var_dump($id);
+    }
+    public function jjjj14()
+    {   
+        $data=['name'=>'BBBB','age'=>1,'class'=>'Aphp'];
+        $b=DB::table('study1')->where('id',113)->update($data);
+        var_dump($b);
+    }
+    public function jjjj15()
+    {
+        $b=DB::table('study1')->where('id',113)->delete();
+        var_dump($b);
+    }
+
+    public function v1()
+    {
+        return view('index');
+    }
+    public function v2()
+    {
+        return view('v2');
+    }
+
 
 }

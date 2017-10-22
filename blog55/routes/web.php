@@ -68,3 +68,15 @@ Route::get('index', function (){
 Route::get('jjjj4', 'Demo@jjjj4');
 Route::get('jjjj5', 'Demo@jjjj5');
 Route::get('jjjj6', 'Demo@jjjj6');
+Route::get('jjjj7', 'Demo@jjjj7');
+Route::get('jjjj8', 'Demo@jjjj8');
+Route::get('jjjj9', 'Demo@jjjj9');
+Route::get('jjjj10', 'Demo@jjjj10');
+Route::get('jjjj11', 'Demo@jjjj11');
+Route::get('jjjj12', 'Demo@jjjj12');
+Route::get('jjjj13', 'Demo@jjjj13');
+Route::get('jjjj14', 'Demo@jjjj14');
+Route::get('jjjj15', 'Demo@jjjj15');
+
+Route::get('v1', 'Demo@v1');
+Route::get('v2', 'Demo@v2');
