@@ -242,8 +242,12 @@ class Demo extends Controller
         return view('index');
     }
     public function v2()
-    {
-        return view('v2');
+    {   
+        $namea='我是控制器的变量';
+        $data=['a'=>'你好','b'=>'你好帅','c'=>'你好漂亮','d'=>''];
+        $datas=[];
+        $users = DB::table('study1')->paginate(10);
+        return view('v2',['name'=>$namea,'age'=>1,'data'=>$data,'datas'=>$datas,'i'=>1,'users'=>$users]);
     }
 
 
