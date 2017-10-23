@@ -80,3 +80,5 @@ Route::get('jjjj15', 'Demo@jjjj15');
 
 Route::get('v1', 'Demo@v1');
 Route::get('v2', 'Demo@v2');
+
+Route::get('s1', 'Study@s1');
