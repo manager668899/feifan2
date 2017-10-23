@@ -247,6 +247,7 @@ class Demo extends Controller
         $data=['a'=>'你好','b'=>'你好帅','c'=>'你好漂亮','d'=>''];
         $datas=[];
         $users = DB::table('study1')->paginate(10);
+       // $users->links();
         return view('v2',['name'=>$namea,'age'=>1,'data'=>$data,'datas'=>$datas,'i'=>1,'users'=>$users]);
     }
 
