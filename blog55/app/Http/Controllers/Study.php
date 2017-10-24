@@ -12,4 +12,23 @@ class Study extends Controller
        $data=DB::table('study1')->get();
        return view('study.lista',['data'=>$data]);
     }
+    public function ecd(Request $request)
+    {  
+    	if($request->isMethod('get')){
+    		    	//$id=$request->all();
+    	$ids=$request->input('id');
+    	//$idsa=$request->only('id');
+    	$data=DB::table('study1')->where('id',$ids)->first();
+    	//var_dump($data);
+    	return view('study.ecd',['data'=>$data]);
+      }else{
+         $datas=$request->all();
+         //var_dump($datas);
+         $datay=$request->only(['name','age','sex','relish','class']);
+         $bool=DB::table('study1')->where('id',$datas['id'])->update($datay);
+         var_dump($bool);
+      }
+
+
+    }
 }

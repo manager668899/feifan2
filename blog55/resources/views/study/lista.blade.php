@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="{{url('bootstrap')}}/css/bootstrap.css">
-</head>
-<body>
-	<div class="container">
-		 <table class="table table-striped">
+@extends('study.base')
+@section('content')
+<table class="table table-striped">
 		 	<tr>
 			  <th class="active" style="width:15%">姓名</th>
 			  <th class="success" style="width:10%">年龄</th>
@@ -23,12 +16,8 @@
 			  <td class="warning">{{$vv->relish}}</td>
 			  <td class="danger">{{$vv->sex}}</td>
 			  <td class="info">{{$vv->class}}</td>
-			  <td class="active">修改</td>
+			  <td class="active"><a href="ecd?id={{$vv->id}}">修改</a> 删除</td>
 			</tr>
 			@endforeach
 		</table>
-		
-	</div>
-	
-</body>
-</html>
+@endsection

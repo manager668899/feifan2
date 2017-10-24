@@ -82,3 +82,4 @@ Route::get('v1', 'Demo@v1');
 Route::get('v2', 'Demo@v2');
 
 Route::get('s1', 'Study@s1');
+Route::any('ecd', 'Study@ecd');
