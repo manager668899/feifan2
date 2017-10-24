@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\model\Demo;
 
 class Study extends Controller
 {
@@ -26,9 +27,21 @@ class Study extends Controller
          //var_dump($datas);
          $datay=$request->only(['name','age','sex','relish','class']);
          $bool=DB::table('study1')->where('id',$datas['id'])->update($datay);
-         var_dump($bool);
+         //var_dump($bool);
+         // return ['status'=>1];
       }
 
 
+    }
+    public function ecd2()
+    {
+        $data=Demo::all();
+        //dd($data);
+        $datas=Demo::get()->toArray();
+        echo '<pre>';
+        var_dump($datas);
+        $dd=DB::select('select * from study1');
+        echo '<hr/>';
+        var_dump($dd);
     }
 }

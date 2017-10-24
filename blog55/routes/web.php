@@ -53,6 +53,8 @@ Route::get('sss', 'Admin\Index@sss');
 Route::get('aaaa', 'Demo@aaaa');
 Route::get('bbbb/{id?}', 'Demo@bbbb');
 Route::get('aaai', 'Home\Index@aaai');
+Route::get('aaa2', 'Home\Index@aaa2');
+
 Route::get('ffff', 'Demo@ffff')->middleware('CheckAge');
 Route::get('home', 'Demo@gggg');
 Route::get('hhhh', 'Demo@hhhh');
@@ -83,3 +85,4 @@ Route::get('v2', 'Demo@v2');
 
 Route::get('s1', 'Study@s1');
 Route::any('ecd', 'Study@ecd');
+Route::any('ecd2', 'Study@ecd2');
