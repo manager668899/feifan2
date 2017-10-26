@@ -30,10 +30,15 @@
   	  	  	 type:'post',
   	  	  	 url:'{{url('ecd')}}',
   	  	  	 data:$('#form').serialize(),
+
   	  	  	 success:function(data)
   	  	  	 {
-                //alert(data);
-                console.log(data);
+                 var datas=JSON.parse(data);
+                //console.log(data);
+                if(datas.status==1){
+                   window.location.assign('{{url('s1')}}');
+                }
+                
   	  	  	 }
   	  	  });
   	  }

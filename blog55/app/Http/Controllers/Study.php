@@ -28,7 +28,10 @@ class Study extends Controller
          $datay=$request->only(['name','age','sex','relish','class']);
          $bool=DB::table('study1')->where('id',$datas['id'])->update($datay);
          //var_dump($bool);
-         // return ['status'=>1];
+         if($bool){
+            return  json_encode(['status'=>1]);
+         }
+         
       }
 
 

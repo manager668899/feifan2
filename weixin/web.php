@@ -1,6 +1,9 @@
 <?php
 class Wexin
-{
+{  
+
+	protected $appid='wx0a2c5388d006520f';
+	protected $appsecret='1ae0412d23b257e6ea90082b5bc53ce9';
 	public function config()
 	{
        $signature=$_GET['signature'];
@@ -16,6 +19,32 @@ class Wexin
 		   echo $echostr;
 		}
 	}
+ public function curl($url,$type='get',$res='json',$arr=''){
+            $ch=curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //禁止输出
+            //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            //curl_setopt($ch, CURLOPT_HEADER, 0);  //可以取消了
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+                                // CURLOPT_SSL_VERIFYPEER => false,
+                               //  CURLOPT_SSL_VERIFYHOST => false
+             if($type=='post'){
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
+             }
+            $output=curl_exec($ch);
+                if($output === false)
+                        {
+                            echo 'Curl error: ' . curl_error($ch);
+                        }
+            curl_close($ch);
+             if($res=='json'){
+                  return  json_decode($output,true);
+             }
+            //return $output;
+            }
+
 	public function fromMsg()
 	{
        $obj=$GLOBALS['HTTP_RAW_POST_DATA']; 
