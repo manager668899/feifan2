@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-10-11 10:00:58
+Date: 2017-10-26 18:34:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -905,17 +905,30 @@ CREATE TABLE `rbac_node` (
   `operation` varchar(50) NOT NULL DEFAULT '' COMMENT '用户操作的节点',
   `title` varchar(50) NOT NULL DEFAULT '' COMMENT '操作名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of rbac_node
 -- ----------------------------
-INSERT INTO `rbac_node` VALUES ('1', 'listsa', '查询');
-INSERT INTO `rbac_node` VALUES ('2', 'add', '增加');
-INSERT INTO `rbac_node` VALUES ('3', 'updete', '修改');
-INSERT INTO `rbac_node` VALUES ('4', 'delete', '删除');
-INSERT INTO `rbac_node` VALUES ('5', 'deleteall', '删除全部');
-INSERT INTO `rbac_node` VALUES ('6', 'set', '分配');
+INSERT INTO `rbac_node` VALUES ('1', 'index', '');
+INSERT INTO `rbac_node` VALUES ('2', 'article', '');
+INSERT INTO `rbac_node` VALUES ('3', 'user', '');
+INSERT INTO `rbac_node` VALUES ('4', 'order', '');
+INSERT INTO `rbac_node` VALUES ('5', 'role', '');
+INSERT INTO `rbac_node` VALUES ('6', 'urlget', '');
+INSERT INTO `rbac_node` VALUES ('7', 'system', '');
+INSERT INTO `rbac_node` VALUES ('8', 'listsa', '');
+INSERT INTO `rbac_node` VALUES ('9', 'add', '');
+INSERT INTO `rbac_node` VALUES ('10', 'updete', '');
+INSERT INTO `rbac_node` VALUES ('11', 'delete', '');
+INSERT INTO `rbac_node` VALUES ('12', 'deleteall', '');
+INSERT INTO `rbac_node` VALUES ('13', 'set', '');
+INSERT INTO `rbac_node` VALUES ('14', 'listAuth', '');
+INSERT INTO `rbac_node` VALUES ('15', 'addRole', '');
+INSERT INTO `rbac_node` VALUES ('16', 'receive', '');
+INSERT INTO `rbac_node` VALUES ('17', 'userRole', '');
+INSERT INTO `rbac_node` VALUES ('18', 'vip2', '');
+INSERT INTO `rbac_node` VALUES ('19', 'yyy', 'yyy');
 
 -- ----------------------------
 -- Table structure for rbac_role
@@ -931,9 +944,9 @@ CREATE TABLE `rbac_role` (
 -- ----------------------------
 -- Records of rbac_role
 -- ----------------------------
-INSERT INTO `rbac_role` VALUES ('1', '普通组', '1,2');
+INSERT INTO `rbac_role` VALUES ('1', '普通组', '1,2,3,4,7');
 INSERT INTO `rbac_role` VALUES ('2', '高级组', '1,2,3');
-INSERT INTO `rbac_role` VALUES ('3', '超级组', '1,2,3,4,5,6');
+INSERT INTO `rbac_role` VALUES ('3', '超级组', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19');
 
 -- ----------------------------
 -- Table structure for rbac_user
@@ -1179,24 +1192,25 @@ DROP TABLE IF EXISTS `study`;
 CREATE TABLE `study` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `xingming` varchar(20) NOT NULL DEFAULT '',
-  `city` varchar(20) NOT NULL,
-  `shouji` varchar(20) NOT NULL,
+  `city` varchar(20) NOT NULL DEFAULT '',
+  `shouji` varchar(20) NOT NULL DEFAULT '',
   `guojia` varchar(20) DEFAULT '',
-  `num` tinyint(4) NOT NULL,
+  `num` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of study
 -- ----------------------------
 INSERT INTO `study` VALUES ('1', '张三', '西安', '130012345678', '中国', '50');
-INSERT INTO `study` VALUES ('2', '李四', '渭南', '', '中国', '90');
+INSERT INTO `study` VALUES ('2', 'yyyyy', '渭南', '', '中国', '90');
 INSERT INTO `study` VALUES ('3', '王五', '汉中', '', '中国', '60');
 INSERT INTO `study` VALUES ('4', '张三', '西安', '', '美国', '40');
 INSERT INTO `study` VALUES ('5', '小王', '渭南市', '123456', 'chaina', '30');
 INSERT INTO `study` VALUES ('6', '张三丰', '', '', '', '0');
 INSERT INTO `study` VALUES ('7', '张三丰', '', '', '', '0');
 INSERT INTO `study` VALUES ('9', 'ffffffff', '', '', '', '0');
+INSERT INTO `study` VALUES ('10', 'yyyyy', '', '', '', '1');
 
 -- ----------------------------
 -- Table structure for study1
@@ -1206,64 +1220,68 @@ CREATE TABLE `study1` (
   `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
   `ipd` int(4) unsigned NOT NULL DEFAULT '0',
   `name` varchar(30) NOT NULL DEFAULT '' COMMENT '姓名',
-  `age` tinyint(2) NOT NULL DEFAULT '0' COMMENT '年龄',
-  `sex` varchar(5) NOT NULL DEFAULT '' COMMENT '性别',
+  `age` int(4) NOT NULL DEFAULT '0' COMMENT '年龄',
+  `sex` varchar(30) NOT NULL DEFAULT '' COMMENT '性别',
   `relish` varchar(40) NOT NULL DEFAULT '' COMMENT '爱好',
   `class` varchar(30) NOT NULL DEFAULT '' COMMENT '班级',
   `img` varchar(300) NOT NULL DEFAULT '' COMMENT '图片',
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=114 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of study1
 -- ----------------------------
-INSERT INTO `study1` VALUES ('1', '1', '张三', '18', '男', '音乐', '好好学习', '');
-INSERT INTO `study1` VALUES ('2', '2', '飞凡教育世界500强', '30', '男', '足球', 'php班', '');
-INSERT INTO `study1` VALUES ('3', '4', '快来飞凡学习', '30', '男', '高薪就业', 'php班', '');
+INSERT INTO `study1` VALUES ('1', '1', '南山门杨戬', '18', '男', '音乐', '好好学习2222', '');
+INSERT INTO `study1` VALUES ('2', '2', '巨灵神', '30', '男', '足球张', 'php班', '');
+INSERT INTO `study1` VALUES ('3', '4', '孙悟空', '30', '男', '高薪就业', 'php班', '');
 INSERT INTO `study1` VALUES ('4', '0', '飞凡有朋友就推荐', '30', '男', '足球2', 'php班', '');
-INSERT INTO `study1` VALUES ('5', '0', '推荐一个300块只有暑假', '30', '男', '足球3', 'php班', '');
-INSERT INTO `study1` VALUES ('6', '0', '张4', '30', '男', '足球4', 'php班', '');
-INSERT INTO `study1` VALUES ('7', '0', '张5', '29', '男', '足球5', 'php班', '');
-INSERT INTO `study1` VALUES ('8', '0', '张6', '28', '男', '足球6', 'php班', '');
-INSERT INTO `study1` VALUES ('9', '0', '张7', '30', '男', '足球7', 'php班', '');
-INSERT INTO `study1` VALUES ('10', '0', '张8', '30', '男', '足球8', 'php班', '');
-INSERT INTO `study1` VALUES ('11', '0', '张9', '30', '男', '足球9', 'php班', '');
-INSERT INTO `study1` VALUES ('12', '0', '张10', '30', '男', '足球10', 'php班', '');
+INSERT INTO `study1` VALUES ('5', '0', '黄飞鸿11', '30', '男', '足球3', 'php班', '');
+INSERT INTO `study1` VALUES ('6', '0', '蜘蛛精', '30', '男', '足球4', 'php班', '');
+INSERT INTO `study1` VALUES ('7', '0', '哪吒闹海', '29', '男', '足球5', 'php班', '');
+INSERT INTO `study1` VALUES ('8', '0', '玉皇大帝', '28', '男', '足球6', '玉皇大帝', '');
+INSERT INTO `study1` VALUES ('9', '0', '黑旋风李逵', '30', '男', '足球7', 'php班', '');
+INSERT INTO `study1` VALUES ('10', '0', '女儿国国王', '30', '男', '足球8', 'php班', '');
+INSERT INTO `study1` VALUES ('11', '0', '梁山好汉李逵', '30', '男', '足球9', 'php班', '');
+INSERT INTO `study1` VALUES ('12', '0', '牛魔王', '30', '男', '足球10', 'php班', '');
 INSERT INTO `study1` VALUES ('13', '0', '张11', '30', '男', '足球11', 'php班', '');
 INSERT INTO `study1` VALUES ('14', '0', '张12', '30', '男', '足球12', 'php班', '');
 INSERT INTO `study1` VALUES ('15', '0', '张13', '30', '男', '足球13', 'php班', '');
-INSERT INTO `study1` VALUES ('16', '0', '大飞哥', '30', '', '', 'php班04班', '');
-INSERT INTO `study1` VALUES ('17', '0', '王张', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('18', '0', '刘张', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('19', '0', '黄张', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('20', '0', '黄张黄', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('21', '0', '刘张刘', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('22', '0', '王张望', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('23', '0', '', '0', '', '', '2017-05-16 12:00:11', '');
+INSERT INTO `study1` VALUES ('16', '0', '铁扇公主', '30', '女', '铁扇', 'php班04班', '');
+INSERT INTO `study1` VALUES ('17', '0', '天山童姥', '0', '女', '男', '足球', '');
+INSERT INTO `study1` VALUES ('18', '0', '王小子', '88', '女', '44', 'tttttt', '');
+INSERT INTO `study1` VALUES ('19', '0', '银脚大黄', '12', '男', '吃唐僧肉', '不知道1', '');
+INSERT INTO `study1` VALUES ('20', '0', '小白龙', '18', '男', '奔跑', '无 没有', '');
+INSERT INTO `study1` VALUES ('21', '0', '东海龙王', '19', '男', '美女', '不知道', '');
+INSERT INTO `study1` VALUES ('22', '0', '北海龙王', '55', '男', '美女', '师傅', '');
+INSERT INTO `study1` VALUES ('23', '0', '干露露1', '21', '女', '演戏', 'yyyyy', '');
 INSERT INTO `study1` VALUES ('24', '0', '你好', '23', '', '', '不知道', '');
 INSERT INTO `study1` VALUES ('25', '0', '你好', '23', '', '', '不知道', '');
 INSERT INTO `study1` VALUES ('26', '0', '不知道', '0', '', '', '', '');
 INSERT INTO `study1` VALUES ('27', '0', '不知道', '0', '', '', '', '');
 INSERT INTO `study1` VALUES ('28', '0', '不知道', '0', '', '', '', '');
 INSERT INTO `study1` VALUES ('29', '0', 'jjjjj', '90', '', '', '', '');
-INSERT INTO `study1` VALUES ('30', '0', '', '0', '', '', '', '');
-INSERT INTO `study1` VALUES ('31', '0', 'fff', '0', '', '', '', '');
+INSERT INTO `study1` VALUES ('30', '0', '黄飞鸿', '18', '男', '武术', '太极班1', '');
+INSERT INTO `study1` VALUES ('31', '0', '张不知道', '34', '女', '体育', 'PHP', '');
 INSERT INTO `study1` VALUES ('32', '0', 'wang 同学', '13', '', '', 'dddddd', '');
-INSERT INTO `study1` VALUES ('33', '0', '', '0', '', '', '', '');
+INSERT INTO `study1` VALUES ('33', '0', '习大大3', '13', '男', '祖国', '是是是', '');
 INSERT INTO `study1` VALUES ('34', '0', '西安你好', '20', '', '睡觉', 'smarty班级', '');
 INSERT INTO `study1` VALUES ('35', '0', '渭南', '13', '', '旅游', 'phpbanb', '');
 INSERT INTO `study1` VALUES ('36', '0', '没有名字', '0', '男', '不知道', '不知道班级', '');
-INSERT INTO `study1` VALUES ('37', '0', '', '0', '', '', '', '');
+INSERT INTO `study1` VALUES ('37', '0', '蒋介石', '88', '男', '美女', '中国富强', '');
 INSERT INTO `study1` VALUES ('38', '0', '你好PHP班', '13', '', 'PHP研究', 'PHP版', '');
-INSERT INTO `study1` VALUES ('39', '0', '你好PHP班1', '13', '', 'PHP研究', 'PHP版', '');
+INSERT INTO `study1` VALUES ('39', '0', '中国油田1', '13', '女', 'PHP研究', 'PHP版', '');
 INSERT INTO `study1` VALUES ('80', '0', '少林武功', '90', '', '', '', '');
+INSERT INTO `study1` VALUES ('108', '0', 'AAAAA', '18', '', '', 'php', '');
 INSERT INTO `study1` VALUES ('42', '9', '你好不知道', '30', '', '不知道', '不知道1', '');
 INSERT INTO `study1` VALUES ('43', '0', '好学生', '0', '', '', '', '');
+INSERT INTO `study1` VALUES ('110', '0', 'AAAAAS', '19', '', '', 'phpB', '');
+INSERT INTO `study1` VALUES ('109', '0', 'AAAAAQ', '15', '', '', 'phpA', '');
 INSERT INTO `study1` VALUES ('48', '0', 'zzzzz', '5', '', '', '', '');
 INSERT INTO `study1` VALUES ('49', '0', '张思', '99', '', '', '', '');
 INSERT INTO `study1` VALUES ('50', '0', '张思3', '99', '', '', '', '');
 INSERT INTO `study1` VALUES ('51', '0', '李思', '55', '', '', '', '');
+INSERT INTO `study1` VALUES ('105', '0', 'uuuuu', '0', '', '', '', '');
 INSERT INTO `study1` VALUES ('53', '0', 'dddd', '44', '', '', '', '');
 INSERT INTO `study1` VALUES ('54', '0', '李四123', '23', '', '', '', '');
 INSERT INTO `study1` VALUES ('55', '0', '李武', '15', '', '', '', '');
@@ -1284,7 +1302,7 @@ INSERT INTO `study1` VALUES ('71', '0', '周芷若b2', '18', '', '', '九阴白�
 INSERT INTO `study1` VALUES ('72', '0', '周芷若c3', '18', '', '', '九阴白骨爪c', '');
 INSERT INTO `study1` VALUES ('73', '0', '周芷若a1', '18', '', '', '九阴白骨爪a', '');
 INSERT INTO `study1` VALUES ('74', '0', '周芷若b2', '18', '', '', '九阴白骨爪b', '');
-INSERT INTO `study1` VALUES ('76', '0', '张三', '23', '', '', '你好phpp ', '');
+INSERT INTO `study1` VALUES ('76', '0', '张三', '23', '', '', '你好phpp', '');
 INSERT INTO `study1` VALUES ('77', '0', 'adminj', '21', '', '', '', '');
 INSERT INTO `study1` VALUES ('78', '0', '犬夜叉', '24', '', '', '坎坎坷坷', '');
 INSERT INTO `study1` VALUES ('89', '0', '你是什么人我不知道啊', '12', '女', '没有', '达到的', '');
@@ -1299,10 +1317,11 @@ INSERT INTO `study1` VALUES ('95', '0', '师傅是否水电费', '34', '', '', '
 INSERT INTO `study1` VALUES ('96', '0', '降龙十八掌', '12', '', '', '太极', 'uploads/nuo8aXcwJPb5Gmdq8ohZsNxzRDIPwrgTrchmvmNu.jpeg');
 INSERT INTO `study1` VALUES ('97', '0', '我的名字', '23', '', '', 'php班级', '');
 INSERT INTO `study1` VALUES ('98', '0', '张三', '18', '', '音乐', '好好学习', '');
+INSERT INTO `study1` VALUES ('112', '0', 'AAAAA', '18', '', '', 'php', '');
+INSERT INTO `study1` VALUES ('111', '0', 'BBBB', '1', '', '', 'Aphp', '');
 INSERT INTO `study1` VALUES ('101', '0', 'uuuuyyyy', '127', '', '', '2uuuuyyyy', '');
 INSERT INTO `study1` VALUES ('102', '0', 'uuuuyyyy', '88', '', '', '2uuuuyyyy', '');
 INSERT INTO `study1` VALUES ('103', '0', '王五103', '67', '', '', '', '');
-INSERT INTO `study1` VALUES ('104', '0', '王五', '67', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for teacher
@@ -1404,18 +1423,23 @@ CREATE TABLE `tg_buy` (
   `userid` int(4) unsigned NOT NULL COMMENT '用户的id号',
   `goodsstyle` varchar(200) NOT NULL COMMENT '商品的属性',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tg_buy
 -- ----------------------------
-INSERT INTO `tg_buy` VALUES ('1', '7', '1', '1', '42码.不加绒');
+INSERT INTO `tg_buy` VALUES ('1', '7', '2', '1', '42码.不加绒');
 INSERT INTO `tg_buy` VALUES ('2', '7', '1', '1', '42码.超薄款');
 INSERT INTO `tg_buy` VALUES ('3', '7', '2', '1', '36码');
 INSERT INTO `tg_buy` VALUES ('4', '5', '2', '1', '12L');
 INSERT INTO `tg_buy` VALUES ('5', '2', '3', '1', '大屏.金属');
 INSERT INTO `tg_buy` VALUES ('6', '8', '3', '1', 'uu');
 INSERT INTO `tg_buy` VALUES ('7', '7', '1', '1', '36码.35码.42码');
+INSERT INTO `tg_buy` VALUES ('8', '3', '2', '4', '金属边框.曲屏');
+INSERT INTO `tg_buy` VALUES ('9', '2', '10', '1', '大屏.金属');
+INSERT INTO `tg_buy` VALUES ('10', '2', '1', '1', '大屏.金属');
+INSERT INTO `tg_buy` VALUES ('11', '2', '1', '1', '大屏.金属');
+INSERT INTO `tg_buy` VALUES ('12', '3', '12', '1', '金属边框.曲屏');
 
 -- ----------------------------
 -- Table structure for tg_class
@@ -1527,7 +1551,7 @@ CREATE TABLE `tg_user` (
   `userroleid` smallint(6) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user` (`user`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tg_user
@@ -1535,6 +1559,8 @@ CREATE TABLE `tg_user` (
 INSERT INTO `tg_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1505113293', '1');
 INSERT INTO `tg_user` VALUES ('2', 'admin1', 'e10adc3949ba59abbe56e057f20f883e', '1505267934', '2');
 INSERT INTO `tg_user` VALUES ('3', 'admin2', 'e10adc3949ba59abbe56e057f20f883e', '1505267994', '3');
+INSERT INTO `tg_user` VALUES ('4', 'rzh', 'e10adc3949ba59abbe56e057f20f883e', '1508407150', '1');
+INSERT INTO `tg_user` VALUES ('5', 'adminqqe', 'e10adc3949ba59abbe56e057f20f883e', '1508408229', '1');
 
 -- ----------------------------
 -- Table structure for think_zixun
