@@ -25,7 +25,6 @@ class Createmenu extends Gettoken
 		          "name":"李若彤3",
 		          "url":"http://www.baidu.com"
 		       }
-
 		   ]
 		 },
 		{
@@ -38,19 +37,19 @@ class Createmenu extends Gettoken
 		       },
 		       	{
 		          "type":"view",
-		          "name":"李若彤2",
-		          "url":"http://www.baidu.com"
+		          "name":"提醒",
+		          "url":"http://www.php029.top/weixin/msg.php"
 		       },
 		        {
 		          "type":"view",
-		          "name":"李若彤3",
-		          "url":"http://www.baidu.com"
+		          "name":"授权",
+		          "url":"http://www.php029.top/weixin/auth.php"
 		       }
 
 		   ]  
 		},
 		{  
-		   "name":"华山派",
+		   "name":"我的操作",
 		  		  "sub_button":[
 		       {
 		          "type":"view",
@@ -66,6 +65,16 @@ class Createmenu extends Gettoken
 		          "type":"view",
 		          "name":"李若彤3",
 		          "url":"http://www.baidu.com"
+		       },
+		       {
+		          "type":"view",
+		          "name":"提醒消费",
+		          "url":"http://www.php029.top/weixin/msg.php"
+		       },
+		        {
+		          "type":"view",
+		          "name":"授权",
+		          "url":"http://www.php029.top/weixin/auth.php"
 		       }
 
 		   ]

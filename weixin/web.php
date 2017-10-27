@@ -48,9 +48,8 @@ class Wexin
 	public function fromMsg()
 	{
        $obj=$GLOBALS['HTTP_RAW_POST_DATA']; 
+       $this->log($obj);
        $postSql=simplexml_load_string($obj,'SimpleXMLElement',LIBXML_NOCDATA);
-       //$this->log($postSql->Content);
-       // $this->log($obj);
 
          switch ($postSql->MsgType){
              	case 'text':
@@ -68,7 +67,7 @@ class Wexin
              		$this->toVoi($postSql);
              		break;             	
              	default:
-             		$this->toDef($postSql);
+             		//$this->toDef($postSql);
              		break;
              }    
 	}
@@ -89,7 +88,7 @@ class Wexin
 		$str=sprintf($xml,$ToUserName,$FromUserName,$CreateTime,$Content);
 
 		echo $str;
-		$this->log($str);
+		//$this->log($str);
 
 	}
 	//调试
@@ -110,7 +109,7 @@ class Wexin
 		$str=sprintf($xml,$ToUserName,$FromUserName,$CreateTime,$Content);
 
 		echo $str;
-		$this->log($str);
+		//$this->log($str);
 	}
 	public function toVoi($postSql)
 	{
@@ -171,7 +170,7 @@ class Wexin
         $url2='http://www.qq.com/';
 		$str=sprintf($xml,$ToUserName,$FromUserName,$CreateTime,$title1,$des1,$PicUrl1,$url1,$title2,$des2,$PicUrl2,$url2);
 		echo $str;
-		$this->log($str);
+		//$this->log($str);
      
 
  }
