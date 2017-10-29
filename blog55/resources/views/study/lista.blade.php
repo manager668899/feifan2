@@ -1,5 +1,6 @@
 @extends('study.base')
 @section('content')
+{{ URL::asset('css/bootstrap.css') }}
 <table class="table table-striped">
 		 	<tr>
 			  <th class="active" style="width:15%">姓名</th>
