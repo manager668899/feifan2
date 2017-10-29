@@ -1,8 +1,8 @@
 @extends('base/basev2')
 @section('tttt','yyyy')
 @section('head')
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <script type="text/javascript" src="js/js.js" ></script>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/base.css') }}">
+  <script type="text/javascript" src="{{ URL::asset('js/js.js') }}" ></script>
 @endsection
 
 

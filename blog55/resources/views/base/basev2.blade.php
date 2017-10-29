@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>基础</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/base.css') }}">
 	@section('head')
 	@show
 </head>
