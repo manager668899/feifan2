@@ -12,8 +12,8 @@ class Createmenu extends Gettoken
 		  "sub_button":[
 		       {
 		          "type":"click",
-		          "name":"李若彤1",
-		          "key":"你好"
+		          "name":"click",
+		          "key":"http://www.php029.top/weixin/msg.php"
 		       },
 		       	{
 		          "type":"view",

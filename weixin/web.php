@@ -65,7 +65,10 @@ class Wexin
 
              	case 'voice':
              		$this->toVoi($postSql);
-             		break;             	
+             		break; 
+             	case 'event':
+             		$this->event($postSql);
+             		break;                 	
              	default:
              		//$this->toDef($postSql);
              		break;
@@ -173,6 +176,24 @@ class Wexin
 		//$this->log($str);
      
 
+ }
+ public function event($postSql='')
+ {
+    // header('Location:http://www.php029.top/weixin/msg.php');
+    $xml="<xml>
+			<ToUserName><![CDATA[%s]]></ToUserName>
+			<FromUserName><![CDATA[%s]]></FromUserName>
+			<CreateTime>%s</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[%s]]></Content>
+			</xml>";
+        $FromUserName=$postSql->ToUserName;
+        $ToUserName=$postSql->FromUserName;
+        $CreateTime=$postSql->CreateTime=time();
+        $Content=$postSql->Content='欢迎光临我的公众号';
+		$str=sprintf($xml,$ToUserName,$FromUserName,$CreateTime,$Content);
+
+		echo $str;
  }
  public function log($data='')
 	{
